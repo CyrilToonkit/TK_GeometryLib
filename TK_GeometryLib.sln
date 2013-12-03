@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_GeometryLib", "GeometryLib\TK_GeometryLib.csproj", "{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_AreaMapFramework", "AreaMap\TK_AreaMapFramework.csproj", "{F89E6A33-BA0E-4273-AF08-16572C65669C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_SynopticView", "SynopticView\TK_SynopticView.csproj", "{59D315AD-CC4E-4C59-94CC-EABF6E134099}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89E6A33-BA0E-4273-AF08-16572C65669C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89E6A33-BA0E-4273-AF08-16572C65669C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89E6A33-BA0E-4273-AF08-16572C65669C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89E6A33-BA0E-4273-AF08-16572C65669C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D315AD-CC4E-4C59-94CC-EABF6E134099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D315AD-CC4E-4C59-94CC-EABF6E134099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D315AD-CC4E-4C59-94CC-EABF6E134099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D315AD-CC4E-4C59-94CC-EABF6E134099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

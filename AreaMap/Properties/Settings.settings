@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AreaMapFramework.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MenuFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Consolas, 9.75pt</Value>
+    </Setting>
+    <Setting Name="MenuFontColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">224, 224, 224</Value>
+    </Setting>
+    <Setting Name="BackgroundColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">112, 112, 112</Value>
+    </Setting>
+    <Setting Name="BackDarkColour" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">Control</Value>
+    </Setting>
+    <Setting Name="LittleFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Segoe Condensed, 9pt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
