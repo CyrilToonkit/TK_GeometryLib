@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AreaMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Library</Name>
+  <ImagePath />
+  <Areas>
+    <Area>
+      <Name>L_Arm</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Polygon</Type>
+      <Shape xsi:type="Polygon2">
+        <Center>
+          <X>358</X>
+          <Y>222</Y>
+        </Center>
+        <Points>
+          <Vector2>
+            <X>320</X>
+            <Y>222</Y>
+          </Vector2>
+          <Vector2>
+            <X>359</X>
+            <Y>260</Y>
+          </Vector2>
+          <Vector2>
+            <X>400</X>
+            <Y>231</Y>
+          </Vector2>
+          <Vector2>
+            <X>353</X>
+            <Y>175</Y>
+          </Vector2>
+        </Points>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <XmlColor>ARGBColor:60:255:0:0</XmlColor>
+      <RefCenter>
+        <X>358</X>
+        <Y>222</Y>
+      </RefCenter>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>L_ForeArm</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Polygon</Type>
+      <Shape xsi:type="Polygon2">
+        <Center>
+          <X>413.75</X>
+          <Y>291</Y>
+        </Center>
+        <Points>
+          <Vector2>
+            <X>365</X>
+            <Y>268</Y>
+          </Vector2>
+          <Vector2>
+            <X>416</X>
+            <Y>342</Y>
+          </Vector2>
+          <Vector2>
+            <X>463</X>
+            <Y>313</Y>
+          </Vector2>
+          <Vector2>
+            <X>411</X>
+            <Y>241</Y>
+          </Vector2>
+        </Points>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <XmlColor>ARGBColor:60:255:0:0</XmlColor>
+      <RefCenter>
+        <X>413.75</X>
+        <Y>291</Y>
+      </RefCenter>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Switch</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Circle</Type>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>458.483643</X>
+          <Y>196.478088</Y>
+        </Center>
+        <Radius>25</Radius>
+      </Shape>
+      <Behavior>SelectAndMove</Behavior>
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <RefCenter>
+        <X>458.483643</X>
+        <Y>196.478088</Y>
+      </RefCenter>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <ImgPath>Z:\ToonKit\Visuels\Synoptic\Switch.png</ImgPath>
+      <ImgPosition>
+        <X>10</X>
+        <Y>10</Y>
+      </ImgPosition>
+    </Area>
+  </Areas>
+</AreaMap>
