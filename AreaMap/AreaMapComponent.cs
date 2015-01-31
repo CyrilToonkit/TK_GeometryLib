@@ -227,7 +227,6 @@ namespace TK.GeometryLib.AreaMapFramework
         List<Area> _selection = new List<Area>();
 
         List<Area> _unValidatedValues = new List<Area>();
-
         Pen _boldPen = new Pen(Color.FromArgb(120,0,0,0), 3f);
         Pen _selectPen = new Pen(Color.DodgerBlue, 1f);
         Brush _selectBrush = new SolidBrush(Color.FromArgb(50, Color.DodgerBlue));
@@ -262,6 +261,27 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             get { return _selectionMode; }
             set { _selectionMode = value; }
+        }
+
+        public string SelfPath
+        {
+            get
+            {
+                string path = "";
+
+                if (Maps.Count > 0)
+                {
+                    FileInfo info = new FileInfo(Maps[0].Path);
+                    path =  info.Directory.Parent.FullName;
+                }
+
+                return path;
+            }
+        }
+
+        public string ReplaceVariables(string instring)
+        {
+            return instring.Replace("SelfPath", SelfPath);
         }
 
         [Browsable(false)]
@@ -769,112 +789,151 @@ namespace TK.GeometryLib.AreaMapFramework
                         if (data.Area.Behavior == AreaBehavior.Button && !IsEditing)
                         {
                             data.Area = data.Area.Clone();
+                            //Check if we have some commands
+                            if (data.Area.MetaData.Contains(Area.COMMANDTAG))
+                            {
+                                string metaData = data.Area.MetaData;
+                                string[] args;
+
+                                AreaMapControl control = GetAreaMapControl();
+
+                                while (metaData.Contains(Area.COMMANDTAG))
+                                {
+                                    int tagIndex = metaData.IndexOf(Area.COMMANDTAG);
+                                    int argsIndex = metaData.IndexOf('(', tagIndex);
+
+                                    string cmdName = metaData.Substring(tagIndex + 1, argsIndex - tagIndex - 1);
+                                    args = GetArguments(metaData, Area.COMMANDTAG + cmdName);
+
+                                    if (control != null)
+                                    {
+                                        control.Handler.ExecuteCommand(cmdName, args);
+                                    }
+
+                                    metaData = Remove(metaData, Area.COMMANDTAG);
+                                }
+
+                                data.Area.MetaData = metaData;
+                            }
+
                             //Check if we have some internal function
-                            if (data.Area.MetaData.Contains("#"))
+                            if (data.Area.MetaData.Contains(Area.FUNCTIONTAG))
                             {
                                 string metaData = data.Area.MetaData;
                                 string arg = "";
                                 string paramList = "";
 
-                                while (metaData.Contains("#"))
+                                while (metaData.Contains(Area.FUNCTIONTAG))
                                 {
-                                    if (metaData.Contains("#ShowArea("))
+                                    if (metaData.Contains(Area.FUNCTIONTAG + "ShowArea("))
                                     {
-                                        arg = GetArgument(metaData, "#ShowArea");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "ShowArea");
                                         ShowArea(arg);
-                                        metaData = Remove(metaData, "#ShowArea");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ShowArea");
                                     }
-                                    else if (metaData.Contains("#HideArea("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "HideArea("))
                                     {
-                                        arg = GetArgument(metaData, "#HideArea");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "HideArea");
                                         HideArea(arg);
-                                        metaData = Remove(metaData, "#HideArea");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "HideArea");
                                     }
-                                    else if (metaData.Contains("#ToggleArea("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ToggleArea("))
                                     {
-                                        arg = GetArgument(metaData, "#ToggleArea");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "ToggleArea");
                                         ToggleGroup(arg);
-                                        metaData = Remove(metaData, "#ToggleArea");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ToggleArea");
                                     }
-                                    else if (metaData.Contains("#ShowGroup("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ShowGroup("))
                                     {
-                                        arg = GetArgument(metaData, "#ShowGroup");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "ShowGroup");
                                         ShowGroup(arg);
-                                        metaData = Remove(metaData, "#ShowGroup");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ShowGroup");
                                     }
-                                    else if (metaData.Contains("#HideGroup("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "HideGroup("))
                                     {
-                                        arg = GetArgument(metaData, "#HideGroup");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "HideGroup");
                                         HideGroup(arg);
-                                        metaData = Remove(metaData, "#HideGroup");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "HideGroup");
                                     }
-                                    else if (metaData.Contains("#ToggleGroup("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ToggleGroup("))
                                     {
-                                        arg = GetArgument(metaData, "#ToggleGroup");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "ToggleGroup");
                                         ToggleGroup(arg);
-                                        metaData = Remove(metaData, "#ToggleGroup");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ToggleGroup");
                                     }
-                                    else if (metaData.Contains("#SelectArea("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "FreezeGroup("))
                                     {
-                                        arg = GetArgument(metaData, "#SelectArea");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "FreezeGroup");
+                                        FreezeGroup(arg);
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "FreezeGroup");
+                                    }
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "UnfreezeGroup("))
+                                    {
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "UnfreezeGroup");
+                                        UnfreezeGroup(arg);
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "UnfreezeGroup");
+                                    }
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "SelectArea("))
+                                    {
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "SelectArea");
                                         SelectArea(arg);
-                                        metaData = Remove(metaData, "#SelectArea");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectArea");
                                     }
-                                    else if (metaData.Contains("#SelectGroup("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "SelectGroup("))
                                     {
-                                        arg = GetArgument(metaData, "#SelectGroup");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "SelectGroup");
                                         SelectGroup(arg);
-                                        metaData = Remove(metaData, "#SelectGroup");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectGroup");
                                     }
-                                    else if (metaData.Contains("#SelectAll("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "SelectAll("))
                                     {
                                         SelectAll();
-                                        metaData = Remove(metaData, "#SelectAll");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectAll");
                                     }
-                                    else if (metaData.Contains("#DeselectAll("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "DeselectAll("))
                                     {
                                         DeselectAll();
-                                        metaData = Remove(metaData, "#DeselectAll");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "DeselectAll");
                                     }
-                                    else if (metaData.Contains("#RefreshSelection("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "RefreshSelection("))
                                     {
                                         OnFunctionCalled(this, new FunctionEventArgs("RefreshSelection", new object[0]));
-                                        metaData = Remove(metaData, "#RefreshSelection");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "RefreshSelection");
                                     }
-                                    else if (metaData.Contains("#ResetAll("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ResetAll("))
                                     {
                                         ResetAll();
-                                        metaData = Remove(metaData, "#ResetAll");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetAll");
                                     }
-                                    else if (metaData.Contains("#ResetArea("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ResetArea("))
                                     {
-                                        arg = GetArgument(metaData, "#ResetArea");
+                                        arg = GetArgument(metaData, Area.FUNCTIONTAG + "ResetArea");
                                         ResetArea(arg);
-                                        metaData = Remove(metaData, "#ResetArea");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetArea");
                                     }
-                                    else if (metaData.Contains("#ResetCurrent("))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "ResetCurrent("))
                                     {
                                         ResetCurrent();
-                                        metaData = Remove(metaData, "#ResetCurrent");
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetCurrent");
                                     }
-                                    else if (metaData.Contains("#GetSelectedParams()"))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "GetSelectedParams()"))
                                     {
                                         paramList = GetSelectedParams();
-                                        metaData = metaData.Replace("#GetSelectedParams()", "\"" + paramList + "\"");
+                                        metaData = metaData.Replace(Area.FUNCTIONTAG + "GetSelectedParams()", "\"" + paramList + "\"");
                                     }
-                                    else if (metaData.Contains("#GetCurrentParams()"))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "GetCurrentParams()"))
                                     {
                                         paramList = GetCurrentParams();
-                                        metaData = metaData.Replace("#GetCurrentParams()", "\"" + paramList + "\"");
+                                        metaData = metaData.Replace(Area.FUNCTIONTAG + "GetCurrentParams()", "\"" + paramList + "\"");
                                     }
-                                    else if (metaData.Contains("#GetAllParams()"))
+                                    else if (metaData.Contains(Area.FUNCTIONTAG + "GetAllParams()"))
                                     {
                                         paramList = GetAllParams();
-                                        metaData = metaData.Replace("#GetAllParams()", "\"" + paramList + "\"");
+                                        metaData = metaData.Replace(Area.FUNCTIONTAG + "GetAllParams()", "\"" + paramList + "\"");
                                     }
                                     else
                                     {
-                                        metaData = metaData.Remove(metaData.IndexOf("#"), 1);
+                                        metaData = metaData.Remove(metaData.IndexOf(Area.FUNCTIONTAG), 1);
                                     }
                                 }
 
@@ -963,6 +1022,37 @@ namespace TK.GeometryLib.AreaMapFramework
             return TypesHelper.Join(paramsList);
         }
 
+        public AreaMapControl GetAreaMapControl()
+        {
+            AreaMapControl pagesContainer = null;
+
+            try
+            {
+                UserControl synopticUCtrl = Parent.Parent.Parent.Parent.Parent as UserControl;
+                if (synopticUCtrl != null)
+                {
+                    pagesContainer = synopticUCtrl.Controls[0] as AreaMapControl;
+                }
+            }
+            catch (Exception e) { }
+
+            return pagesContainer;
+        }
+
+        public List<AreaMapComponent> GetSynopticPages()
+        {
+            List<AreaMapComponent> pages = new List<AreaMapComponent>();
+
+            AreaMapControl pagesContainer = GetAreaMapControl();
+
+            if (pagesContainer != null)
+            {
+                pages.Add(pagesContainer.AreaMapComponent);
+            }
+
+            return pages;
+        }
+
         #region Internal functions
 
         public void SelectGroup(string arg)
@@ -971,6 +1061,20 @@ namespace TK.GeometryLib.AreaMapFramework
             if (areaG != null)
             {
                 SelectGroupWithModifiers(areaG);
+            }
+            else
+            {
+                List<AreaMapComponent> pages = GetSynopticPages();
+
+                foreach (AreaMapComponent page in pages)
+                {
+                    areaG = page.FindGroup(arg);
+
+                    if (areaG != null)
+                    {
+                        page.SelectGroupWithModifiers(areaG);
+                    }
+                }
             }
         }
 
@@ -1033,6 +1137,20 @@ namespace TK.GeometryLib.AreaMapFramework
                 ApplyGroupValues();
                 Invalidate();
             }
+            else
+            {
+                List<AreaMapComponent> pages = GetSynopticPages();
+
+                foreach (AreaMapComponent page in pages)
+                {
+                    areaG = page.FindGroup(arg);
+
+                    if (areaG != null)
+                    {
+                        page.HideGroup(areaG.Name);
+                    }
+                }
+            }
         }
 
         public void ShowGroup(string arg)
@@ -1043,6 +1161,70 @@ namespace TK.GeometryLib.AreaMapFramework
                 areaG.Visible = true;
                 ApplyGroupValues();
                 Invalidate();
+            }
+            else
+            {
+                List<AreaMapComponent> pages = GetSynopticPages();
+
+                foreach (AreaMapComponent page in pages)
+                {
+                    areaG = page.FindGroup(arg);
+
+                    if (areaG != null)
+                    {
+                        page.ShowGroup(areaG.Name);
+                    }
+                }
+            }
+        }
+
+        public void UnfreezeGroup(string arg)
+        {
+            AreaGroup areaG = FindGroup(arg);
+            if (areaG != null)
+            {
+                areaG.Active = true;
+                ApplyGroupValues();
+                Invalidate();
+            }
+            else
+            {
+                List<AreaMapComponent> pages = GetSynopticPages();
+
+                foreach (AreaMapComponent page in pages)
+                {
+                    areaG = page.FindGroup(arg);
+
+                    if (areaG != null)
+                    {
+                        page.UnfreezeGroup(areaG.Name);
+                    }
+                }
+            }
+        }
+
+        public void FreezeGroup(string arg)
+        {
+            AreaGroup areaG = FindGroup(arg);
+            if (areaG != null)
+            {
+                areaG.Active = false;
+                ApplyGroupValues();
+                Invalidate();
+            }
+            else
+            {
+                List<AreaMapComponent> pages = GetSynopticPages();
+
+                foreach (AreaMapComponent page in pages)
+                {
+                    areaG = page.FindGroup(arg);
+
+                    if (areaG != null)
+                    {
+                        page.FreezeGroup(areaG.Name);
+                    }
+                }
             }
         }
 
@@ -1105,6 +1287,19 @@ namespace TK.GeometryLib.AreaMapFramework
             int endIndex = metaData.IndexOf(")", index);
 
             return metaData.Substring(index + funcName.Length + 1, endIndex - (index + funcName.Length) - 1).Trim('"');
+        }
+
+        private string[] GetArguments(string metaData, string funcName)
+        {
+            string arg = GetArgument(metaData, funcName);
+            string[] args = arg.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                args[i] = ReplaceVariables(args[i].Trim());
+            }
+
+            return args;
         }
 
         private void SelectwithModifiers(Area area)
@@ -1431,7 +1626,11 @@ namespace TK.GeometryLib.AreaMapFramework
                                             }
                                         }
                                     }
-                                    _isDragging = true;
+
+                                    if (area.IsSelectable || area.IsMovable)
+                                    {
+                                        _isDragging = true;
+                                    }
                                 }
                             }
                         }
@@ -1504,7 +1703,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
                 foreach (Area area in CurrentAreaMap.Areas)
                 {
-                    if (scaledSelection.Touch(area.Shape) && (IsEditing || area.IsSelectable))
+                    if ((IsEditing || (area.IsSelectable && area.IsVisible)) && scaledSelection.Touch(area.Shape))
                     {
                         selected.Add(area);
                     }
@@ -1531,7 +1730,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
                 foreach (Area area in CurrentAreaMap.Areas)
                 {
-                    if (scaledStroke.Touch(area.Shape) && (IsEditing || area.IsSelectable))
+                    if ((IsEditing || (area.IsSelectable && area.IsVisible)) && scaledStroke.Touch(area.Shape))
                     {
                         selected.Add(area);
                     }
@@ -2121,13 +2320,13 @@ namespace TK.GeometryLib.AreaMapFramework
                                 }
                             }
                         }
-
-                        //Groups
-                        if (_groups.Count > 0)
-                        {
-                            SaveGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
-                        }
                     }
+                }
+
+                //Groups
+                if (_groups.Count > 0)
+                {
+                    SaveGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
                 }
             }
             catch (Exception e) { status = e.Message; }
@@ -2334,6 +2533,7 @@ namespace TK.GeometryLib.AreaMapFramework
         
         private void SaveGroups(string inPath)
         {
+            DumpGroups();
             StreamWriter writer = null;
             XmlSerializer ser = new XmlSerializer(typeof(List<AreaGroup>));
 

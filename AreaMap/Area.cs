@@ -63,6 +63,9 @@ namespace TK.GeometryLib.AreaMapFramework
             _behavior = AreaBehavior.MoveOnly;
         }
 
+        public const string COMMANDTAG = "€";
+        public const string FUNCTIONTAG = "#";
+
         AreaMap _map = null;
         string _name = "NewArea";
         string _metaData = "";
@@ -620,8 +623,11 @@ namespace TK.GeometryLib.AreaMapFramework
         [Browsable(false)]
         public string XmlTextFont
         {
-            get { return SerializationHelper.SerializeFont(_textFont); }
-            set { _textFont = SerializationHelper.DeserializeFont(value); }
+            get
+            {
+                return SerializationHelper.SerializeFont(new Font(_textFont.FontFamily, _textSize, _textFont.Style));
+            }
+            set { _textFont = SerializationHelper.DeserializeFont(value); _textSize = _textFont.Size; }
         }
 
         [XmlIgnore]
@@ -710,7 +716,7 @@ namespace TK.GeometryLib.AreaMapFramework
         [Browsable(false)]
         public bool IsSelectable
         {
-            get { return _behavior == AreaBehavior.SelectAndMove || _behavior == AreaBehavior.SelectOnly || _isEditing || IsSubComponent; }
+            get { return IsActive && (_behavior == AreaBehavior.SelectAndMove || _behavior == AreaBehavior.SelectOnly || _isEditing || IsSubComponent); }
         }
 
         [CategoryAttribute("Shape")]

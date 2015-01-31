@@ -14,7 +14,8 @@ namespace TK.GeometryLib.SynopticView
         public SynopticViewer()
         {
             InitializeComponent();
-            areaMapControl1.LoadXml("Z:\\ToonKit\\Synoptic\\Body.xml");
+            synopticUCtrl1.Handler = new SynopticTestHandler();
+            synopticUCtrl1.AddPage("Z:\\ToonKit\\Synoptic\\Head.xml");
         }
     }
 }

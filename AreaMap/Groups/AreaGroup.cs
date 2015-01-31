@@ -47,7 +47,7 @@ namespace TK.GeometryLib.AreaMapFramework
             set { _areas = value; }
         }
 
-        List<string> _areasNames;
+        List<string> _areasNames = new List<string>();
         public List<string> AreasNames
         {
             get

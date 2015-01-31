@@ -57,11 +57,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 374);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 370);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 76;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(409, 21);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(409, 25);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Options";
@@ -80,7 +80,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 0);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 3);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -91,7 +91,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 1);
+            this.panel1.Size = new System.Drawing.Size(135, 3);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -146,6 +146,7 @@
             this.completeSlider1.ButtonStatus = TK.GraphComponents.SliderButtonStatus.Empty;
             this.completeSlider1.Decimals = 0;
             this.completeSlider1.DefaultValue = 0;
+            this.completeSlider1.DisplayDefault = false;
             this.completeSlider1.DisplayEditBox = true;
             this.completeSlider1.DisplayEditBoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.completeSlider1.DisplayEditButton = false;
@@ -170,7 +171,7 @@
             this.completeSlider1.Minimum = 10;
             this.completeSlider1.Name = "completeSlider1";
             this.completeSlider1.ShowIntervals = true;
-            this.completeSlider1.Size = new System.Drawing.Size(178, 1);
+            this.completeSlider1.Size = new System.Drawing.Size(178, 3);
             this.completeSlider1.SliderFont = new System.Drawing.Font("Consolas", 9.75F);
             this.completeSlider1.SliderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.completeSlider1.StartText = "%";
@@ -187,7 +188,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(409, 374);
+            this.tabControl1.Size = new System.Drawing.Size(409, 370);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -196,7 +197,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(401, 348);
+            this.tabPage1.Size = new System.Drawing.Size(401, 344);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -206,7 +207,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(401, 349);
+            this.tabPage2.Size = new System.Drawing.Size(401, 345);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -217,7 +218,7 @@
             this.areaMapContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.areaMapContainer.Location = new System.Drawing.Point(0, 0);
             this.areaMapContainer.Name = "areaMapContainer";
-            this.areaMapContainer.Size = new System.Drawing.Size(409, 374);
+            this.areaMapContainer.Size = new System.Drawing.Size(409, 370);
             this.areaMapContainer.TabIndex = 1;
             this.areaMapContainer.SizeChanged += new System.EventHandler(this.areaMapContainer_SizeChanged);
             // 

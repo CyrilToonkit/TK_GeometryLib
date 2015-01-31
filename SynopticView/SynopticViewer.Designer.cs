@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.areaMapControl1 = new TK.GeometryLib.AreaMapFramework.AreaMapControl();
+            this.synopticUCtrl1 = new TK.SynopticLib.SynopticUCtrl();
             this.SuspendLayout();
             // 
-            // areaMapControl1
+            // synopticUCtrl1
             // 
-            this.areaMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.areaMapControl1.IsDocked = true;
-            this.areaMapControl1.Location = new System.Drawing.Point(0, 0);
-            this.areaMapControl1.Name = "areaMapControl1";
-            this.areaMapControl1.Size = new System.Drawing.Size(711, 518);
-            this.areaMapControl1.TabIndex = 0;
+            this.synopticUCtrl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.synopticUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.synopticUCtrl1.Location = new System.Drawing.Point(0, 0);
+            this.synopticUCtrl1.ModelName = "No model !";
+            this.synopticUCtrl1.Name = "synopticUCtrl1";
+            this.synopticUCtrl1.Ratio = 0.2094421F;
+            this.synopticUCtrl1.Size = new System.Drawing.Size(711, 518);
+            this.synopticUCtrl1.TabIndex = 0;
             // 
             // SynopticViewer
             // 
@@ -46,7 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(711, 518);
-            this.Controls.Add(this.areaMapControl1);
+            this.Controls.Add(this.synopticUCtrl1);
             this.Name = "SynopticViewer";
             this.Text = "SynopticViewer";
             this.ResumeLayout(false);
@@ -55,6 +57,8 @@
 
         #endregion
 
-        private TK.GeometryLib.AreaMapFramework.AreaMapControl areaMapControl1;
+        private TK.SynopticLib.SynopticUCtrl synopticUCtrl1;
+
+
     }
 }

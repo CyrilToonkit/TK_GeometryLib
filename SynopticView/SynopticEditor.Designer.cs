@@ -35,11 +35,14 @@
             // 
             this.areaMapControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.areaMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.areaMapControl1.GridOnTop = false;
             this.areaMapControl1.Location = new System.Drawing.Point(0, 0);
             this.areaMapControl1.Name = "areaMapControl1";
+            this.areaMapControl1.ShowGrid = false;
             this.areaMapControl1.Size = new System.Drawing.Size(722, 507);
             this.areaMapControl1.SyncSelection = true;
             this.areaMapControl1.TabIndex = 0;
+            this.areaMapControl1.Load += new System.EventHandler(this.areaMapControl1_Load);
             // 
             // SynopticEditor
             // 

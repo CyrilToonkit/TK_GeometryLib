@@ -16,6 +16,7 @@ namespace TK.GeometryLib.SynopticView
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SynopticEditor());
+            //Application.Run(new SynopticViewer());
         }
     }
 }

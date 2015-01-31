@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AreaMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>NewArea</Name>
+  <ImagePath>..\CompatibilityTest.jpg</ImagePath>
+  <Path>Z:\ToonKit\RnD\XSI\Workgroup_2012_64\Application\Plugins\Resources\CompatibilityTest.xml</Path>
+  <Index>0</Index>
+  <Areas>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Name>MessageBox</Name>
+      <MetaData>TK_SelectSet(SelfModelName, "Main");</MetaData>
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Rectangle</Type>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>219.16655</X>
+          <Y>165.5091</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>274.6402</Length>
+        </Center>
+        <Width>197.530365</Width>
+        <Height>35.768383</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XOffset>0</XOffset>
+      <YOffset>0</YOffset>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <RefCenter>
+        <X>219.16655</X>
+        <Y>165.5091</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>274.6402</Length>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Name>TimeLine</Name>
+      <MetaData>TK_SelectSet(SelfModelName, "Main");</MetaData>
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Rectangle</Type>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.425735</X>
+          <Y>106.509064</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>159.27597</Length>
+        </Center>
+        <Width>18.604414</Width>
+        <Height>33.8787842</Height>
+      </Shape>
+      <Behavior>MoveOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>200</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XOffset>0</XOffset>
+      <YOffset>0</YOffset>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <RefCenter>
+        <X>118.425735</X>
+        <Y>106.509064</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>159.27597</Length>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+  </Areas>
+  <AssociatedPaths />
+</AreaMap>

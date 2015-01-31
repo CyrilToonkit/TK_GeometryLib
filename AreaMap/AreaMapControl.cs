@@ -14,6 +14,18 @@ namespace TK.GeometryLib.AreaMapFramework
         public AreaMapControl()
         {
             InitializeComponent();
+            Init();
+        }
+
+        protected SynopticDCCHandler _handler = new SynopticDCCHandler();
+        public SynopticDCCHandler Handler
+        {
+            get { return _handler; }
+            set { _handler = value; }
+        }
+
+        protected void Init()
+        {
             _areaMapComponent.BackgroundImageLayout = ImageLayout.Zoom;
             _areaMapComponent.AllowDrop = true;
             _areaMapComponent.ScalingChanged += new AreaMapComponent.ScalingChangedDelegate(_areaMapComponent_ScalingChanged);
@@ -27,7 +39,7 @@ namespace TK.GeometryLib.AreaMapFramework
         bool _optionsShowing = true;
         bool _muteEvents = false;
         bool _isDocked = true;
-        AreaMapComponent _areaMapComponent = new AreaMapComponent();
+        protected AreaMapComponent _areaMapComponent = new AreaMapComponent();
 
         public bool IsDocked
         {

@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AreaMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>NewArea</Name>
+  <ImagePath>..\KeyingPanel.jpg</ImagePath>
+  <Path>Z:\Toonkit\RnD\Src\TK_GeometryLib\SynopticView\Resources\CommonPanel.xml</Path>
+  <Index>0</Index>
+  <Areas>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_0</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 0, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Showing")
+#HideArea("Controls_2_Showing")
+#HideArea("Controls_3_Showing")
+#ShowArea("Controls_1_Hidden")
+#ShowArea("Controls_2_Hidden")
+#ShowArea("Controls_3_Hidden")
+#SelectGroup("Coco")</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>40</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>91.2359543</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>40</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>91.2359543</Length>
+      </RefCenter>
+      <ImgPath>..\0.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>11</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>15.5563488</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_1_Showing</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 1, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Showing")
+#HideArea("Controls_3_Showing")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Hidden")
+#ShowArea("Controls_3_Hidden")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>90</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>121.753853</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>90</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>121.753853</Length>
+      </RefCenter>
+      <ImgPath>..\1.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_2_Showing</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 2, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Hidden")
+#HideArea("Controls_3_Showing")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Showing")
+#ShowArea("Controls_3_Hidden")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>false</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>140</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>162.246719</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:24:Regular</XmlTextFont>
+      <RefCenter>
+        <X>140</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>162.246719</Length>
+      </RefCenter>
+      <ImgPath>..\2.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_3_Showing</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 3, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Hidden")
+#HideArea("Controls_3_Hidden")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Showing")
+#ShowArea("Controls_3_Showing")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>false</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>190</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>206.9396</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:24:Regular</XmlTextFont>
+      <RefCenter>
+        <X>190</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>206.9396</Length>
+      </RefCenter>
+      <ImgPath>..\3.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_1_Hidden</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 1, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Showing")
+#HideArea("Controls_3_Showing")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Hidden")
+#ShowArea("Controls_3_Hidden")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>false</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>90</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>121.753853</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:0:0:0</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:24:Regular</XmlTextFont>
+      <RefCenter>
+        <X>90</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>121.753853</Length>
+      </RefCenter>
+      <ImgPath>..\1.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_2_Hidden</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 2, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Hidden")
+#HideArea("Controls_3_Showing")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Showing")
+#ShowArea("Controls_3_Hidden")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>140</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>162.246719</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:64:64:64</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>140</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>162.246719</Length>
+      </RefCenter>
+      <ImgPath>..\2.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Name>Controls_3_Hidden</Name>
+      <MetaData>SetValue(SelfModelName + ".OSCAR_Attributes.Controls", 3, null);
+TK_UpdateControlsState(SelfModelName, "Controls,Controls_1,Controls_2");
+#HideArea("Controls_1_Hidden")
+#HideArea("Controls_2_Hidden")
+#HideArea("Controls_3_Hidden")
+#ShowArea("Controls_1_Showing")
+#ShowArea("Controls_2_Showing")
+#ShowArea("Controls_3_Showing")
+</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>190</X>
+          <Y>82</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>206.9396</Length>
+        </Center>
+        <Radius>20</Radius>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:64:64:64</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>190</X>
+        <Y>82</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>206.9396</Length>
+      </RefCenter>
+      <ImgPath>..\3.png</ImgPath>
+      <ImgPosition>
+        <X>11</X>
+        <Y>10</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>14.8660688</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Key_Current_All</Name>
+      <MetaData>TK_KeyCurrent(SelfModelName, 2);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>680.1062</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>690.27124</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>680.1062</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>690.27124</Length>
+      </RefCenter>
+      <ImgPath>..\KeyCurrent.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Key_Current_Params</Name>
+      <MetaData>TK_KeyCurrent(SelfModelName, 1);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>630.10614</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>641.064453</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>630.10614</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>641.064453</Length>
+      </RefCenter>
+      <ImgPath>..\KeyCurrentParams.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Key_Current_Controls</Name>
+      <MetaData>TK_KeyCurrent(SelfModelName, 0);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>580.1058</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>591.9904</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>580.1058</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>591.9904</Length>
+      </RefCenter>
+      <ImgPath>..\KeyCurrentControls.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Key_All</Name>
+      <MetaData>TK_KeyAll(SelfModelName);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>120</X>
+          <Y>417.991821</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>434.876038</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>120</X>
+        <Y>417.991821</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>434.876038</Length>
+      </RefCenter>
+      <ImgPath>..\KeyAll.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Remove_Key</Name>
+      <MetaData>var selection = getValue('SelectionList');
+if(selection.Count != 0){
+  try{
+       TK_RemoveKey();
+  }
+  catch(e){
+  }
+}
+else{
+	var allKeySet	= Dictionary.GetObject( SelfModelName + '.Main_KeySet' , false);
+	RemoveKeyOnKeyable(allKeySet);
+}</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>734.6555</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>744.075745</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>734.6555</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>744.075745</Length>
+      </RefCenter>
+      <ImgPath>..\RemoveKey.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Remove_Anim</Name>
+      <MetaData>var selection = getValue('SelectionList');;
+if(selection.Count != 0){
+	try{
+		RemoveAllAnimation(null, null, siUnspecified, siFCurveSource);	
+	}
+	catch(e){
+	}
+}
+else{
+	if(XSIUIToolkit.MsgBox("Are you sure you want to remove any animation on " + SelfModelName + " ?", 
+                        siMsgYesNo | siMsgQuestion, "Remove all animation" ) == siMsgYes)
+	{
+		var allKeySet	= Dictionary.GetObject( SelfModelName  + '.Main_KeySet' , false);
+		RemoveAllAnimation(allKeySet, null, siUnspecified, siFCurveSource);
+	}
+}</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>784.6557</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>793.482544</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>784.6557</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>793.482544</Length>
+      </RefCenter>
+      <ImgPath>..\RemoveAnim.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Reset_Sel</Name>
+      <MetaData>TK_Reset();</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>949.6556</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>956.9617</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>949.6556</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>956.9617</Length>
+      </RefCenter>
+      <ImgPath>..\ResetSel.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Reset_All</Name>
+      <MetaData>TK_ResetAll( SelfModelName );</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>899.6556</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>907.3644</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>899.6556</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>907.3644</Length>
+      </RefCenter>
+      <ImgPath>..\ResetAll.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Mirror_Sel</Name>
+      <MetaData>TK_Mirror(SelfModelName,getSelectionNames());
+function  getSelectionNames(selection){
+        var cSelection    = Application.getValue('SelectionList');
+        var aObjectsNames = [];
+        for(var i=0;i&lt;cSelection.Count;i++){
+            aObjectsNames.push(cSelection(i).Name);
+        }
+        return aObjectsNames.toString();
+}</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>1074.6554</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>1081.11707</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>1074.6554</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1081.11707</Length>
+      </RefCenter>
+      <ImgPath>..\MirrorSel.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Mirror_Pose</Name>
+      <MetaData>TK_Mirror(SelfModelName,getSelectionNames(),false,true);
+function  getSelectionNames(selection){
+        var cSelection    = Application.getValue('SelectionList');
+        var aObjectsNames = [];
+        for(var i=0;i&lt;cSelection.Count;i++){
+            aObjectsNames.push(cSelection(i).Name);
+        }
+        return aObjectsNames.toString();
+}</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.025055</X>
+          <Y>1124.65515</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>1130.83118</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.025055</X>
+        <Y>1124.65515</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1130.83118</Length>
+      </RefCenter>
+      <ImgPath>..\MirrorPose.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Body_Only</Name>
+      <MetaData>TK_KeyAll(SelfModelName,1);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>120.125267</X>
+          <Y>467.490784</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>482.677643</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>120.125267</X>
+        <Y>467.490784</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>482.677643</Length>
+      </RefCenter>
+      <ImgPath>..\BodyOnly.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Facial_Only</Name>
+      <MetaData>TK_KeyAll(SelfModelName,2);</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>120.250549</X>
+          <Y>516.9898</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>530.7906</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>120.250549</X>
+        <Y>516.9898</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>530.7906</Length>
+      </RefCenter>
+      <ImgPath>..\FacialOnly.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>Select_All</Name>
+      <MetaData>TK_SelectSet(SelfModelName, "Main");</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.081856</X>
+          <Y>200.056778</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>232.305923</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.081856</X>
+        <Y>200.056778</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>232.305923</Length>
+      </RefCenter>
+      <ImgPath>..\SelectAll.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>SelectBody</Name>
+      <MetaData>TK_SelectSet(SelfModelName, "Body_Main");</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.20713</X>
+          <Y>249.555756</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>276.135834</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.20713</X>
+        <Y>249.555756</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>276.135834</Length>
+      </RefCenter>
+      <ImgPath>..\SelectBody.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+    <Area>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Name>SelectFacial</Name>
+      <MetaData>TK_SelectSet(SelfModelName, "Facial_Main");</MetaData>
+      <Description />
+      <Text />
+      <TextPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>0</Length>
+      </TextPosition>
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>118.332405</X>
+          <Y>299.0548</Y>
+          <MinimumLength>0</MinimumLength>
+          <Length>321.6152</Length>
+        </Center>
+        <Width>207.614639</Width>
+        <Height>47.075222</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <XYSymmetryMode>false</XYSymmetryMode>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <XMultiply>1</XMultiply>
+      <ValueSuggestedMinX>0</ValueSuggestedMinX>
+      <ValueSuggestedMaxX>0</ValueSuggestedMaxX>
+      <ValueMultiplyX>1</ValueMultiplyX>
+      <XParam />
+      <XOffset>0</XOffset>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <YMultiply>1</YMultiply>
+      <ValueSuggestedMinY>0</ValueSuggestedMinY>
+      <ValueSuggestedMaxY>0</ValueSuggestedMaxY>
+      <ValueMultiplyY>1</ValueMultiplyY>
+      <YParam />
+      <YOffset>0</YOffset>
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <XmlBorderColor>NamedColor:Black</XmlBorderColor>
+      <XmlTextColor>NamedColor:Black</XmlTextColor>
+      <XmlTextFont>Tahoma:9.435193:Regular</XmlTextFont>
+      <RefCenter>
+        <X>118.332405</X>
+        <Y>299.0548</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>321.6152</Length>
+      </RefCenter>
+      <ImgPath>..\SelectFacial.png</ImgPath>
+      <ImgPosition>
+        <X>4</X>
+        <Y>8</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>8.944272</Length>
+      </ImgPosition>
+      <ImgIsBackground>false</ImgIsBackground>
+      <ImgScaling>
+        <X>1</X>
+        <Y>1</Y>
+        <MinimumLength>0</MinimumLength>
+        <Length>1.41421354</Length>
+      </ImgScaling>
+    </Area>
+  </Areas>
+  <AssociatedPaths />
+</AreaMap>

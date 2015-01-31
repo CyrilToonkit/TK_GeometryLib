@@ -53,6 +53,7 @@ namespace TK.GeometryLib.AreaMapFramework
                 area.SetRefCenter();
                 area.Map = this;
                 area.ImgPath = area.ImgPath;
+                area.MetaData = area.MetaData.Replace("\n", "\r\n");
             }
         }
 

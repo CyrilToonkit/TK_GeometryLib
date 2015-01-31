@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{59D315AD-CC4E-4C59-94CC-EABF6E134099}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{AC84E86F-D96B-41C3-8264-45D4BDDADD6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TK.GeometryLib.SynopticView</RootNamespace>
-    <AssemblyName>TK_SynopticView</AssemblyName>
+    <RootNamespace>TK.SynopticLib</RootNamespace>
+    <AssemblyName>TK_SynopticLib</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,6 +35,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -42,9 +44,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TK_BaseLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -56,48 +55,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SynopticEditor.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DCCAreaMapControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SynopticEditor.Designer.cs">
-      <DependentUpon>SynopticEditor.cs</DependentUpon>
+    <Compile Include="DCCAreaMapEditor.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SynopticEditor.resx">
-      <DependentUpon>SynopticEditor.cs</DependentUpon>
+    <Compile Include="SynopticUCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SynopticUCtrl.designer.cs">
+      <DependentUpon>SynopticUCtrl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DCCAreaMapControl.resx">
+      <DependentUpon>DCCAreaMapControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="SynopticUCtrl.resx">
+      <DependentUpon>SynopticUCtrl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SynopticViewer.resx">
-      <DependentUpon>SynopticViewer.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="SynopticTestHandler.cs" />
-    <Compile Include="SynopticViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SynopticViewer.Designer.cs">
-      <DependentUpon>SynopticViewer.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AreaMap\TK_AreaMapFramework.csproj">
@@ -108,13 +88,6 @@
       <Project>{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}</Project>
       <Name>TK_GeometryLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TK_SynopticLib\TK_SynopticLib.csproj">
-      <Project>{AC84E86F-D96B-41C3-8264-45D4BDDADD6D}</Project>
-      <Name>TK_SynopticLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

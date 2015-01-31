@@ -45,7 +45,7 @@
     </Reference>
     <Reference Include="TK_GraphComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_GraphComponents\bin\$(Configuration)\TK_GraphComponents.dll</HintPath>
+      <HintPath>..\..\TK_GraphComponents\bin\Release\TK_GraphComponents.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +94,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SynopticDCCHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AreaMapComponent.resx">
