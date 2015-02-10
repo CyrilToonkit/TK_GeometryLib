@@ -231,6 +231,7 @@ namespace TK.GeometryLib.AreaMapFramework
         Pen _selectPen = new Pen(Color.DodgerBlue, 1f);
         Brush _selectBrush = new SolidBrush(Color.FromArgb(50, Color.DodgerBlue));
 
+        bool _showAll = false;
         bool _showGrid = false;
         bool _gridOnTop = false;
 
@@ -382,6 +383,17 @@ namespace TK.GeometryLib.AreaMapFramework
 
                     Invalidate();
                 }
+            }
+        }
+
+        [Browsable(false)]
+        public bool ShowAll
+        {
+            get { return _showAll; }
+            set
+            {
+                _showAll = value;
+                ApplyGroupValues();
             }
         }
 
@@ -1537,7 +1549,7 @@ namespace TK.GeometryLib.AreaMapFramework
                         _offset += offset*_scaling;
                         modified = true;
                     }
-                    else if(_dragged != null)
+                    else if (_dragged != null && e.Button == MouseButtons.Left)
                     {
                         List<Area> moved = new List<Area>();
                         if (!_dragged.IsSelected)
@@ -2787,7 +2799,7 @@ namespace TK.GeometryLib.AreaMapFramework
                 _groups[row].Visible = true;
                 _groups[row].Active = true;
 
-                _groups[row].ApplyValues();
+                _groups[row].ApplyValues(false);
                 _groups.RemoveAt(row);
             }
         }
@@ -2840,7 +2852,7 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             foreach (AreaGroup group in _groups)
             {
-                group.ApplyValues();
+                group.ApplyValues(_showAll);
             }
             Invalidate();
         }

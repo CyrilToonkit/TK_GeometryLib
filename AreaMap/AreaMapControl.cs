@@ -280,5 +280,15 @@ namespace TK.GeometryLib.AreaMapFramework
         {
 
         }
+
+        private void showAllCB_CheckedChanged(object sender, EventArgs e)
+        {
+            _areaMapComponent.ShowAll = showAllCB.Checked;
+        }
+
+        private void allwaysOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            ParentForm.TopMost = allwaysOnTop.Checked;
+        }
     }
 }

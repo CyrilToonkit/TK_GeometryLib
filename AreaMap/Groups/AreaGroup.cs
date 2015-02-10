@@ -90,12 +90,12 @@ namespace TK.GeometryLib.AreaMapFramework
             }
         }
 
-        internal void ApplyValues()
+        internal void ApplyValues(bool showAll)
         {
             foreach (Area area in _areas)
             {
-                area.IsVisible = _visible;
-                area.IsActive = _active;
+                area.IsVisible = showAll ? true : _visible;
+                area.IsActive = showAll ? true : _active;
             }
         }
     }
