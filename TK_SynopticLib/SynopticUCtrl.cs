@@ -98,7 +98,73 @@ System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
 
         private void mainPanelAreaMapControl_Load(object sender, EventArgs e)
         {
+            List<string> values = Handler.GetStoredValues();
 
+            foreach (string value in values)
+            {
+                setsLB.Items.Add(value);
+            }
+        }
+
+        private void addSetBT_Click(object sender, EventArgs e)
+        {
+            string newItem = newSetName.Text;
+
+            foreach (object listObject in setsLB.Items)
+            {
+                if (newItem == (string)listObject)
+                {
+                    MessageBox.Show("Select set : " + (string)listObject + " already exists !");
+                    return;
+                }
+            }
+
+            if (Handler.AddSelectSet(newItem))
+            {
+                setsLB.Items.Add(newItem);
+            }
+        }
+
+        private void remSetBT_Click(object sender, EventArgs e)
+        {
+            object selectedObject = setsLB.SelectedItem;
+
+            if (selectedObject == null)
+            {
+                return;
+            }
+
+            Handler.RemoveSelectSet((string)selectedObject);
+            setsLB.Items.Remove(selectedObject);
+        }
+
+        private void setsLB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            List<string> sel = new List<string>();
+
+            foreach (object selectedObject in setsLB.SelectedItems)
+            {
+                string selectedText = (string)selectedObject;
+                sel.AddRange(Handler.GetSelectSet(selectedText));
+            }
+
+            if (sel.Count > 0)
+            {
+                Handler.SetSelection(sel);
+            }
+        }
+
+        private void setsLB_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int indexedItem = setsLB.IndexFromPoint(e.X, e.Y);
+
+                if (indexedItem > -1)
+                {
+                    contextMenuStrip1.Show(this, e.X, e.Y);
+                }
+            }
         }
     }
 }

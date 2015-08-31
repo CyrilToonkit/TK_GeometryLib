@@ -8,7 +8,7 @@ namespace TK.GeometryLib.AreaMapFramework
 {
     public class SynopticDCCHandler
     {
-        protected string _modelName = "No model !";
+        protected string _modelName = "None";
         public virtual string ModelName
         {
             get { return _modelName; }
@@ -70,6 +70,26 @@ namespace TK.GeometryLib.AreaMapFramework
         public virtual void Error(string p)
         {
             TKMessageBox.ShowError(p, "Generic error");
+        }
+
+        public virtual bool AddSelectSet(string newItem)
+        {
+            return false;
+        }
+
+        public virtual bool RemoveSelectSet(string p)
+        {
+            return false;
+        }
+
+        public virtual List<string> GetSelectSet(string selectedText)
+        {
+            return new List<string>();
+        }
+
+        public virtual List<string> GetStoredValues()
+        {
+            return new List<string>();
         }
     }
 }

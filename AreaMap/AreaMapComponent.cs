@@ -217,7 +217,7 @@ namespace TK.GeometryLib.AreaMapFramework
         List<Area> _tranforming = new List<Area>();
         Stroke2 _selectStroke = new Stroke2();
         List<AreaMap> _maps = new List<AreaMap>();
-        List<AreaGroup> _groups = new List<AreaGroup>();
+        //List<AreaGroup> _groups = new List<AreaGroup>();
         int _currentGroupIndex = 0;
         int _currentIndex = 0;
         Area _hoverArea = null;
@@ -244,7 +244,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public AreaGroup CurrentGroup
         {
-            get { return (_groups != null && _groups.Count > _currentGroupIndex) ? _groups[_currentGroupIndex] : null; }
+            get { return (Groups != null && Groups.Count > _currentGroupIndex) ? Groups[_currentGroupIndex] : null; }
         }
 
         public List<AreaMap> Maps
@@ -254,8 +254,8 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public List<AreaGroup> Groups
         {
-            get { return _groups; }
-            set { _groups = value; }
+            get{ return CurrentAreaMap.Groups; }
+            set { CurrentAreaMap.Groups = value; }
         }
 
         public SelectionModes SelectionMode
@@ -2279,7 +2279,6 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             _maps.Clear();
             _maps.Add(new AreaMap());
-            _groups.Clear();
             BackgroundImage = null;
         }
 
@@ -2315,7 +2314,7 @@ namespace TK.GeometryLib.AreaMapFramework
             {
                 writer = new StreamWriter(inPath, false);
                 ser.Serialize(writer, inAreaMap);
-
+                /*
                 if (inAll)
                 {
                     if (CurrentAreaMap.AssociatedPaths.Count > 0)
@@ -2339,7 +2338,7 @@ namespace TK.GeometryLib.AreaMapFramework
                 if (_groups.Count > 0)
                 {
                     SaveGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
-                }
+                }*/
             }
             catch (Exception e) { status = e.Message; }
 
@@ -2465,9 +2464,11 @@ namespace TK.GeometryLib.AreaMapFramework
                 }
                 
                 AreaMap newMap = (AreaMap)ser.Deserialize(reader);
-                newMap.Path = inPath; 
+                newMap.Path = inPath;
+                newMap.ResetGroups();
                 _maps.Add(newMap);
                 newMap.InitializeComponents();
+
                 if (!inAdd)
                 {
                     if (newMap.AssociatedPaths.Count > 0)
@@ -2482,11 +2483,14 @@ namespace TK.GeometryLib.AreaMapFramework
                     }
 
                     _currentIndex = 0;
-                    LoadGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
+                    if (newMap.Groups.Count == 0)
+                    {
+                        newMap.LoadGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
+                    }
                 }
                 else
                 {
-                    RefreshAssociated();
+                    //RefreshAssociated();
                 }
 
                 //Resolve
@@ -2501,7 +2505,16 @@ namespace TK.GeometryLib.AreaMapFramework
 
             return status;
         }
+        /*
+        private void DumpGroups()
+        {
+            foreach (AreaGroup group in _groups)
+            {
+                group.DumpAreas();
+            }
+        }
 
+        
         private void LoadGroups(string inPath)
         {
             string status = "";
@@ -2515,7 +2528,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
                     reader = new StreamReader(inPath);
                     _groups = (List<AreaGroup>)ser.Deserialize(reader);
-                    ResetGroups();
+                    //ResetGroups();
                     
                 }
                 catch
@@ -2525,24 +2538,6 @@ namespace TK.GeometryLib.AreaMapFramework
             }
         }
 
-        private void ResetGroups()
-        {
-            List<Area> areas = GetAllAreas();
-
-            foreach (AreaGroup group in _groups)
-            {
-                group.FindAreas(areas);
-            }
-        }
-
-        private void DumpGroups()
-        {
-            foreach (AreaGroup group in _groups)
-            {
-                group.DumpAreas();
-            }
-        }
-        
         private void SaveGroups(string inPath)
         {
             DumpGroups();
@@ -2566,6 +2561,7 @@ namespace TK.GeometryLib.AreaMapFramework
                 }
             }
         }
+        */
 
         private void RefreshAssociated()
         {
@@ -2769,7 +2765,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public AreaGroup FindGroup(string inName)
         {
-            foreach (AreaGroup group in _groups)
+            foreach (AreaGroup group in Groups)
             {
                 if (group.Name == inName)
                 {
@@ -2782,75 +2778,32 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public void AddGroup(string inName)
         {
-            _groups.Add(new AreaGroup(inName));
+            Groups.Add(new AreaGroup(inName));
         }
 
         public void CreateGroupFromSelection(string inName)
         {
-            AreaGroup group = new AreaGroup();
-            group.Areas.AddRange(GetEditSelection());
-            _groups.Add(group);
+            CurrentAreaMap.CreateGroupFromSelection(inName);
         }
 
         public void RemoveGroup(int row)
         {
-            if (row < _groups.Count)
-            {
-                _groups[row].Visible = true;
-                _groups[row].Active = true;
-
-                _groups[row].ApplyValues(false);
-                _groups.RemoveAt(row);
-            }
+            CurrentAreaMap.RemoveGroup(row);
         }
 
         public void AddShapesToGroup(int row)
         {
-            if (row < _groups.Count)
-            {
-                List<Area> EditSelection = GetEditSelection();
-                foreach (Area area in EditSelection)
-                {
-                    if (!_groups[row].Areas.Contains(area))
-                    {
-                        _groups[row].Areas.Add(area);
-                    }
-                }
-            }
-        }
-
-        public List<Area> GetEditSelection()
-        {
-            List<Area> editSelection = new List<Area>();
-            foreach (Area area in CurrentAreaMap.Areas)
-            {
-                if (area.IsSelected)
-                {
-                    editSelection.Add(area);
-                }
-            }
-
-            return editSelection;
+            CurrentAreaMap.AddShapesToGroup(row);
         }
 
         public void RemoveShapesFromGroup(int row)
         {
-           if (row < _groups.Count)
-           {
-               List<Area> EditSelection = GetEditSelection();
-               foreach (Area area in EditSelection)
-               {
-                   if (_groups[row].Areas.Contains(area))
-                   {
-                       _groups[row].Areas.Remove(area);
-                   }
-               }
-           }
+            CurrentAreaMap.RemoveShapesFromGroup(row);
         }
 
         public void ApplyGroupValues()
         {
-            foreach (AreaGroup group in _groups)
+            foreach (AreaGroup group in Groups)
             {
                 group.ApplyValues(_showAll);
             }
@@ -2873,6 +2826,22 @@ namespace TK.GeometryLib.AreaMapFramework
         }
 
         #endregion
+
+        public List<Area> GetEditSelection()
+        {
+            List<Area> maps = GetAllAreas();
+
+            List<Area> editSelection = new List<Area>();
+            foreach (Area area in maps)
+            {
+                if (area.IsSelected)
+                {
+                    editSelection.Add(area);
+                }
+            }
+
+            return editSelection;
+        }
 
         public void SelectGroupWithModifiers(AreaGroup areaGroup)
         {

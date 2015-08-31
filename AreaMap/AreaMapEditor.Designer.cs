@@ -62,7 +62,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collapsibleGroup3 = new TK.GraphComponents.CollapsibleGroup();
-            this.libraryUCtrl1 = new TK.GeometryLib.AreaMapFramework.Library.LibraryUCtrl();
             this.collapsibleGroup1 = new TK.GraphComponents.CollapsibleGroup();
             this.collapsibleGroup2 = new TK.GraphComponents.CollapsibleGroup();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -87,6 +86,7 @@
             this.tabNameTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.areaMapControl1 = new TK.GeometryLib.AreaMapFramework.AreaMapControl();
+            this.libraryUCtrl1 = new TK.GeometryLib.AreaMapFramework.Library.LibraryUCtrl();
             this.menuStrip1.SuspendLayout();
             this.collapsibleGroup3.SuspendLayout();
             this.collapsibleGroup1.SuspendLayout();
@@ -145,57 +145,60 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(169, 6);
             // 
             // saveCurrentToolStripMenuItem
             // 
             this.saveCurrentToolStripMenuItem.Name = "saveCurrentToolStripMenuItem";
-            this.saveCurrentToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.saveCurrentToolStripMenuItem.Text = "Save Current...";
+            this.saveCurrentToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveCurrentToolStripMenuItem.Text = "Save As...";
             this.saveCurrentToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.saveToolStripMenuItem.Text = "Save All...";
+            this.saveToolStripMenuItem.Visible = false;
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.loadToolStripMenuItem.Text = "Load...";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(176, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(169, 6);
+            this.toolStripMenuItem4.Visible = false;
             // 
             // loadAsTabToolStripMenuItem
             // 
             this.loadAsTabToolStripMenuItem.Name = "loadAsTabToolStripMenuItem";
-            this.loadAsTabToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.loadAsTabToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.loadAsTabToolStripMenuItem.Text = "Load as Tab...";
+            this.loadAsTabToolStripMenuItem.Visible = false;
             this.loadAsTabToolStripMenuItem.Click += new System.EventHandler(this.loadAsTabToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(176, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(169, 6);
             // 
             // saveLibraryToolStripMenuItem
             // 
             this.saveLibraryToolStripMenuItem.Name = "saveLibraryToolStripMenuItem";
-            this.saveLibraryToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.saveLibraryToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.saveLibraryToolStripMenuItem.Text = "Save library";
             this.saveLibraryToolStripMenuItem.Click += new System.EventHandler(this.saveLibraryToolStripMenuItem_Click);
             // 
@@ -348,19 +351,10 @@
             this.collapsibleGroup3.Name = "collapsibleGroup3";
             this.collapsibleGroup3.OpenedBaseHeight = 150;
             this.collapsibleGroup3.OpenedBaseWidth = 100;
-            this.collapsibleGroup3.Size = new System.Drawing.Size(43, 480);
+            this.collapsibleGroup3.Size = new System.Drawing.Size(44, 480);
             this.collapsibleGroup3.TabIndex = 2;
             this.collapsibleGroup3.TabStop = false;
             this.collapsibleGroup3.Text = "Library";
-            // 
-            // libraryUCtrl1
-            // 
-            this.libraryUCtrl1.AreaMapComp = null;
-            this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
-            this.libraryUCtrl1.Name = "libraryUCtrl1";
-            this.libraryUCtrl1.Size = new System.Drawing.Size(37, 458);
-            this.libraryUCtrl1.TabIndex = 1;
             // 
             // collapsibleGroup1
             // 
@@ -377,11 +371,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.All;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(439, 24);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(432, 24);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 150;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(291, 480);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(298, 480);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Edit";
@@ -396,11 +390,11 @@
             this.collapsibleGroup2.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup2.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 220);
+            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 227);
             this.collapsibleGroup2.Name = "collapsibleGroup2";
             this.collapsibleGroup2.OpenedBaseHeight = 179;
             this.collapsibleGroup2.OpenedBaseWidth = 200;
-            this.collapsibleGroup2.Size = new System.Drawing.Size(285, 109);
+            this.collapsibleGroup2.Size = new System.Drawing.Size(292, 88);
             this.collapsibleGroup2.TabIndex = 1;
             this.collapsibleGroup2.TabStop = false;
             this.collapsibleGroup2.Text = "Properties";
@@ -418,7 +412,7 @@
             this.propertyGrid1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.propertyGrid1.Location = new System.Drawing.Point(3, 19);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(279, 87);
+            this.propertyGrid1.Size = new System.Drawing.Size(286, 66);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.ViewBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -434,11 +428,11 @@
             this.collapsibleGroup6.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup6.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 329);
+            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 315);
             this.collapsibleGroup6.Name = "collapsibleGroup6";
             this.collapsibleGroup6.OpenedBaseHeight = 56;
             this.collapsibleGroup6.OpenedBaseWidth = 250;
-            this.collapsibleGroup6.Size = new System.Drawing.Size(285, 37);
+            this.collapsibleGroup6.Size = new System.Drawing.Size(292, 44);
             this.collapsibleGroup6.TabIndex = 9;
             this.collapsibleGroup6.TabStop = false;
             this.collapsibleGroup6.Text = "MetaData";
@@ -452,7 +446,7 @@
             this.metaDataTB.Multiline = true;
             this.metaDataTB.Name = "metaDataTB";
             this.metaDataTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.metaDataTB.Size = new System.Drawing.Size(279, 15);
+            this.metaDataTB.Size = new System.Drawing.Size(286, 22);
             this.metaDataTB.TabIndex = 1;
             this.metaDataTB.WordWrap = false;
             this.metaDataTB.TextChanged += new System.EventHandler(this.metaDataTB_TextChanged);
@@ -468,11 +462,11 @@
             this.collapsibleGroup5.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup5.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 366);
+            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 359);
             this.collapsibleGroup5.Name = "collapsibleGroup5";
             this.collapsibleGroup5.OpenedBaseHeight = 100;
             this.collapsibleGroup5.OpenedBaseWidth = 200;
-            this.collapsibleGroup5.Size = new System.Drawing.Size(285, 111);
+            this.collapsibleGroup5.Size = new System.Drawing.Size(292, 118);
             this.collapsibleGroup5.TabIndex = 2;
             this.collapsibleGroup5.TabStop = false;
             this.collapsibleGroup5.Text = "Groups";
@@ -491,7 +485,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupsGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.groupsGridView.Size = new System.Drawing.Size(279, 62);
+            this.groupsGridView.Size = new System.Drawing.Size(286, 69);
             this.groupsGridView.TabIndex = 1;
             this.groupsGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellValueChanged);
             this.groupsGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.groupsGridView_RowHeaderMouseClick);
@@ -505,17 +499,17 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveShapesBT, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddBT, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddObjsBT, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveBT, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 81);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 88);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(279, 27);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(286, 27);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupRemoveShapesBT
@@ -527,7 +521,7 @@
             this.groupRemoveShapesBT.Location = new System.Drawing.Point(211, 1);
             this.groupRemoveShapesBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupRemoveShapesBT.Name = "groupRemoveShapesBT";
-            this.groupRemoveShapesBT.Size = new System.Drawing.Size(67, 25);
+            this.groupRemoveShapesBT.Size = new System.Drawing.Size(74, 25);
             this.groupRemoveShapesBT.TabIndex = 3;
             this.groupRemoveShapesBT.Text = "X";
             this.groupRemoveShapesBT.UseVisualStyleBackColor = false;
@@ -592,7 +586,7 @@
             this.collapsibleGroup4.Name = "collapsibleGroup4";
             this.collapsibleGroup4.OpenedBaseHeight = 150;
             this.collapsibleGroup4.OpenedBaseWidth = 200;
-            this.collapsibleGroup4.Size = new System.Drawing.Size(285, 174);
+            this.collapsibleGroup4.Size = new System.Drawing.Size(292, 181);
             this.collapsibleGroup4.TabIndex = 7;
             this.collapsibleGroup4.TabStop = false;
             this.collapsibleGroup4.Text = "Areas";
@@ -608,7 +602,7 @@
             this.listBox1.Location = new System.Drawing.Point(3, 19);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(279, 124);
+            this.listBox1.Size = new System.Drawing.Size(286, 124);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -618,17 +612,17 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel2.Controls.Add(this.shapeSymBT, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeMirrorBT, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeDuplicateBT, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeRemoveBT, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 144);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 151);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(279, 27);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(286, 27);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // shapeSymBT
@@ -685,7 +679,7 @@
             this.shapeRemoveBT.Location = new System.Drawing.Point(208, 1);
             this.shapeRemoveBT.Margin = new System.Windows.Forms.Padding(1);
             this.shapeRemoveBT.Name = "shapeRemoveBT";
-            this.shapeRemoveBT.Size = new System.Drawing.Size(70, 25);
+            this.shapeRemoveBT.Size = new System.Drawing.Size(77, 25);
             this.shapeRemoveBT.TabIndex = 0;
             this.shapeRemoveBT.Text = "X";
             this.shapeRemoveBT.UseVisualStyleBackColor = false;
@@ -705,7 +699,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 27);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 27);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // removeTabBT
@@ -714,7 +708,7 @@
             this.removeTabBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeTabBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeTabBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.removeTabBT.Location = new System.Drawing.Point(256, 1);
+            this.removeTabBT.Location = new System.Drawing.Point(263, 1);
             this.removeTabBT.Margin = new System.Windows.Forms.Padding(1);
             this.removeTabBT.Name = "removeTabBT";
             this.removeTabBT.Size = new System.Drawing.Size(28, 25);
@@ -733,7 +727,7 @@
             this.tabNameTB.Location = new System.Drawing.Point(77, 2);
             this.tabNameTB.Margin = new System.Windows.Forms.Padding(2);
             this.tabNameTB.Name = "tabNameTB";
-            this.tabNameTB.Size = new System.Drawing.Size(176, 23);
+            this.tabNameTB.Size = new System.Drawing.Size(183, 23);
             this.tabNameTB.TabIndex = 4;
             this.tabNameTB.TextChanged += new System.EventHandler(this.tabNameTB_TextChanged);
             // 
@@ -755,12 +749,21 @@
             synopticDCCHandler1.ModelName = "No model !";
             this.areaMapControl1.Handler = synopticDCCHandler1;
             this.areaMapControl1.IsDocked = true;
-            this.areaMapControl1.Location = new System.Drawing.Point(43, 24);
+            this.areaMapControl1.Location = new System.Drawing.Point(44, 24);
             this.areaMapControl1.Name = "areaMapControl1";
             this.areaMapControl1.OptionsShowing = true;
             this.areaMapControl1.ShowGrid = false;
-            this.areaMapControl1.Size = new System.Drawing.Size(396, 480);
+            this.areaMapControl1.Size = new System.Drawing.Size(388, 480);
             this.areaMapControl1.TabIndex = 3;
+            // 
+            // libraryUCtrl1
+            // 
+            this.libraryUCtrl1.AreaMapComp = null;
+            this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
+            this.libraryUCtrl1.Name = "libraryUCtrl1";
+            this.libraryUCtrl1.Size = new System.Drawing.Size(38, 458);
+            this.libraryUCtrl1.TabIndex = 1;
             // 
             // AreaMapEditor
             // 

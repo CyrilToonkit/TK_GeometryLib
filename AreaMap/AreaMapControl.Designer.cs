@@ -62,11 +62,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 399);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 400);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 97;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(581, 18);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(581, 17);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Options";
@@ -240,7 +240,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(581, 399);
+            this.tabControl1.Size = new System.Drawing.Size(581, 400);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -249,7 +249,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(573, 373);
+            this.tabPage1.Size = new System.Drawing.Size(573, 374);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(573, 374);
+            this.tabPage2.Size = new System.Drawing.Size(573, 373);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -270,7 +270,7 @@
             this.areaMapContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.areaMapContainer.Location = new System.Drawing.Point(0, 0);
             this.areaMapContainer.Name = "areaMapContainer";
-            this.areaMapContainer.Size = new System.Drawing.Size(581, 399);
+            this.areaMapContainer.Size = new System.Drawing.Size(581, 400);
             this.areaMapContainer.TabIndex = 1;
             this.areaMapContainer.SizeChanged += new System.EventHandler(this.areaMapContainer_SizeChanged);
             // 

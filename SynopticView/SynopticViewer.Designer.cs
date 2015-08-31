@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            TK.GeometryLib.AreaMapFramework.SynopticDCCHandler synopticDCCHandler1 = new TK.GeometryLib.AreaMapFramework.SynopticDCCHandler();
             this.synopticUCtrl1 = new TK.SynopticLib.SynopticUCtrl();
             this.SuspendLayout();
             // 
@@ -35,11 +36,13 @@
             // 
             this.synopticUCtrl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.synopticUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            synopticDCCHandler1.ModelName = "No model !";
+            this.synopticUCtrl1.Handler = synopticDCCHandler1;
             this.synopticUCtrl1.Location = new System.Drawing.Point(0, 0);
             this.synopticUCtrl1.ModelName = "No model !";
             this.synopticUCtrl1.Name = "synopticUCtrl1";
             this.synopticUCtrl1.Ratio = 0.2094421F;
-            this.synopticUCtrl1.Size = new System.Drawing.Size(711, 518);
+            this.synopticUCtrl1.Size = new System.Drawing.Size(705, 518);
             this.synopticUCtrl1.TabIndex = 0;
             // 
             // SynopticViewer
@@ -47,7 +50,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(711, 518);
+            this.ClientSize = new System.Drawing.Size(705, 518);
             this.Controls.Add(this.synopticUCtrl1);
             this.Name = "SynopticViewer";
             this.Text = "SynopticViewer";
