@@ -52,7 +52,7 @@
             this.ClientSize = new System.Drawing.Size(722, 507);
             this.Controls.Add(this.areaMapControl1);
             this.Name = "SynopticEditor";
-            this.Text = "SynopTiK Editor";
+            this.Text = "SynopTiK Editor V0.0";
             this.ResumeLayout(false);
 
         }

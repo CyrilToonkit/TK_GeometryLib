@@ -644,6 +644,34 @@ namespace TK.GeometryLib.AreaMapFramework
             }
         }
 
+        [XmlIgnore]
+        [CategoryAttribute("Shape")]
+        public float Height
+        {
+            get
+            {
+                return _shape.Height;
+            }
+            set
+            {
+                _shape.Height = value;
+            }
+        }
+
+        [XmlIgnore]
+        [CategoryAttribute("Shape")]
+        public float Width
+        {
+            get
+            {
+                return _shape.Width;
+            }
+            set
+            {
+                _shape.Width = value;
+            }
+        }
+
         [Browsable(false)]
         public Vector2 RefCenter
         {
@@ -1201,6 +1229,16 @@ namespace TK.GeometryLib.AreaMapFramework
         public void Mirror(Vector2 inCenter)
         {
             _shape.Mirror(inCenter);
+        }
+
+        internal void MirrorY()
+        {
+            _shape.MirrorY();
+        }
+
+        internal void MirrorY(Vector2 inCenter)
+        {
+            _shape.MirrorY(inCenter);
         }
 
         internal void Limit()

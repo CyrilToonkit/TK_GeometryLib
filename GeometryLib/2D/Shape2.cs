@@ -35,6 +35,18 @@ namespace TK.GeometryLib
             set { }
         }
 
+        public virtual float Height
+        {
+            get { return 0.0f; }
+            set { }
+        }
+
+        public virtual float Width
+        {
+            get { return 0.0f; }
+            set { }
+        }
+
         public virtual Vector2 Corner
         {
             get { return Vector2.Null; }
@@ -80,9 +92,22 @@ namespace TK.GeometryLib
             Mirror(Center);
         }
 
+        public virtual void MirrorY()
+        {
+            MirrorY(Center);
+        }
+
         public virtual void Mirror(Vector2 inCenter)
         {
             Vector2 symCenter = new Vector2(inCenter.X, Center.Y);
+            Vector2 local = Center - symCenter;
+            local *= -1;
+            Center = symCenter + local;
+        }
+
+        public virtual void MirrorY(Vector2 inCenter)
+        {
+            Vector2 symCenter = new Vector2(Center.X, inCenter.Y);
             Vector2 local = Center - symCenter;
             local *= -1;
             Center = symCenter + local;

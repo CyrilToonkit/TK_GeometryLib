@@ -22,13 +22,13 @@ namespace TK.GeometryLib
         float _width = 0f;
         float _height = 0f;
 
-        public float Width
+        public override float Width
         {
             get { return _width; }
             set { _width = Math.Max(1, value); }
         }
 
-        public float Height
+        public override float Height
         {
             get { return _height; }
             set { _height = Math.Max(1, value); }

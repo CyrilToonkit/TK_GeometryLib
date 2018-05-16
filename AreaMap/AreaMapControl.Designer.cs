@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AreaMapControl));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.areaMapContainer = new System.Windows.Forms.Panel();
             this.collapsibleGroup1 = new TK.GraphComponents.CollapsibleGroup();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,17 +43,56 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.allwaysOnTop = new System.Windows.Forms.CheckBox();
             this.showAllCB = new System.Windows.Forms.CheckBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.areaMapContainer = new System.Windows.Forms.Panel();
+            this.tabControl1.SuspendLayout();
+            this.areaMapContainer.SuspendLayout();
             this.collapsibleGroup1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.areaMapContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(581, 391);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseUp);
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(573, 365);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(573, 365);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // areaMapContainer
+            // 
+            this.areaMapContainer.Controls.Add(this.tabControl1);
+            this.areaMapContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.areaMapContainer.Location = new System.Drawing.Point(0, 0);
+            this.areaMapContainer.Name = "areaMapContainer";
+            this.areaMapContainer.Size = new System.Drawing.Size(581, 391);
+            this.areaMapContainer.TabIndex = 1;
+            this.areaMapContainer.SizeChanged += new System.EventHandler(this.areaMapContainer_SizeChanged);
             // 
             // collapsibleGroup1
             // 
@@ -62,11 +105,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 400);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(0, 391);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 97;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(581, 17);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(581, 26);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Options";
@@ -209,8 +252,6 @@
             // allwaysOnTop
             // 
             this.allwaysOnTop.AutoSize = true;
-            this.allwaysOnTop.Checked = true;
-            this.allwaysOnTop.CheckState = System.Windows.Forms.CheckState.Checked;
             this.allwaysOnTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.allwaysOnTop.Location = new System.Drawing.Point(290, 3);
             this.allwaysOnTop.Name = "allwaysOnTop";
@@ -232,48 +273,6 @@
             this.showAllCB.UseVisualStyleBackColor = true;
             this.showAllCB.CheckedChanged += new System.EventHandler(this.showAllCB_CheckedChanged);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(581, 400);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(573, 374);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(573, 373);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // areaMapContainer
-            // 
-            this.areaMapContainer.Controls.Add(this.tabControl1);
-            this.areaMapContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.areaMapContainer.Location = new System.Drawing.Point(0, 0);
-            this.areaMapContainer.Name = "areaMapContainer";
-            this.areaMapContainer.Size = new System.Drawing.Size(581, 400);
-            this.areaMapContainer.TabIndex = 1;
-            this.areaMapContainer.SizeChanged += new System.EventHandler(this.areaMapContainer_SizeChanged);
-            // 
             // AreaMapControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,14 +281,14 @@
             this.Controls.Add(this.collapsibleGroup1);
             this.Name = "AreaMapControl";
             this.Size = new System.Drawing.Size(581, 417);
+            this.tabControl1.ResumeLayout(false);
+            this.areaMapContainer.ResumeLayout(false);
             this.collapsibleGroup1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.areaMapContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

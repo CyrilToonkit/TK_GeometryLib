@@ -83,7 +83,8 @@ namespace TK.GeometryLib.AreaMapFramework
                         break;
                     }
                 }
-                if (found != "")
+                //WARNING maybe we want to keep old "unfound" areas names ?
+                if (true || found != "")
                 {
                     areaNames.Remove(found);
                 }

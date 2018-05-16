@@ -5,6 +5,7 @@ using System.Text;
 using TK.BaseLib;
 using System.IO;
 using System.Xml.Serialization;
+using TK.GraphComponents.Dialogs;
 
 namespace TK.GeometryLib.AreaMapFramework
 {

@@ -9,11 +9,18 @@ using System.Windows.Forms;
 using TK.GeometryLib;
 using System.IO;
 using TK.BaseLib;
+using TK.NodalEditor;
+using TK_OSCARLib;
 
 namespace TK.GeometryLib.AreaMapFramework
 {
     public partial class AreaMapEditor : UserControl
     {
+        string applicationName = "SynopTiK Editor V1.6";
+
+        Form addOscarForm = null;
+        AddOscarControlsUCtrl editor = null;
+
         public AreaMapEditor()
         {
             InitializeComponent();
@@ -30,7 +37,7 @@ namespace TK.GeometryLib.AreaMapFramework
         void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             tabNameTB.Text = AreaMapComponent.CurrentAreaMap.Name;
-            ParentForm.Text = "SynopTiK Editor - " + AreaMapComponent.CurrentAreaMap.Path;
+            ParentForm.Text = ApplicationName + " - " + AreaMapComponent.CurrentAreaMap.Path;
             RefreshListBox();
         }
 
@@ -87,6 +94,11 @@ namespace TK.GeometryLib.AreaMapFramework
             get { return areaMapControl1; }
         }
 
+        public string ApplicationName
+        {
+            get { return applicationName; }
+        }
+
         public bool GridOnTop
         {
             get { return AreaMapComponent.GridOnTop; }
@@ -97,6 +109,12 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             get { return AreaMapComponent.ShowGrid; }
             set { AreaMapComponent.ShowGrid = value; }
+        }
+
+        public bool ShowCenter
+        {
+            get { return AreaMapComponent.ShowCenter; }
+            set { AreaMapComponent.ShowCenter = value; }
         }
 
         public bool SyncSelection
@@ -179,6 +197,23 @@ namespace TK.GeometryLib.AreaMapFramework
             }
         }
 
+        private void exportAsAnimPickerFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                if (AreaMapComponent.IsEditing)
+                {
+                    AreaMapComponent.StopEdit();
+                }
+                string error = AreaMapComponent.ExportAsPicker(AreaMapComponent.CurrentAreaMap, saveFileDialog2.FileName, false, 1.5);
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    MessageBox.Show(error);
+                }
+            }
+        }
+
         private void loadPictureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Picture files (*.jpg,*.png,*.gif,*.bmp)|*.jpg;*.png;*.gif;*.bmp";
@@ -186,6 +221,9 @@ namespace TK.GeometryLib.AreaMapFramework
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 AreaMapComponent.SetPicture(openFileDialog1.FileName);
+
+                centerXNUD.Value = (decimal)AreaMapComponent.Center.X;
+                centerXNUD.Value = (decimal)AreaMapComponent.Center.X;
             }
         }
 
@@ -226,14 +264,31 @@ namespace TK.GeometryLib.AreaMapFramework
             }
         }
 
+        private void loadGroupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Xml file (*.xml)|*.xml";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                AreaMapComponent.CurrentAreaMap.LoadGroups(openFileDialog1.FileName);
+                RefreshGroups();
+            }
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshPropGrid();
             if (listBox1.SelectedItems.Count > 0)
             {
+                metaDataTB.Enabled = true;
+
                 _muteEvents = true;
                 metaDataTB.Text = (listBox1.SelectedItems[0] as Area).MetaData;
                 _muteEvents = false;
+            }
+            else
+            {
+                metaDataTB.Enabled = false;
             }
 
             if (SyncSelection && !_muteEvents)
@@ -475,6 +530,94 @@ namespace TK.GeometryLib.AreaMapFramework
                         area = area.Clone();
                         AreaMapComponent.AddArea(area);
                         AreaMapComponent.Symmetrize(area);
+
+                        //Search if Area already exists
+                        int index = 0;
+                        Area existingArea = null;
+                        foreach(Area oldArea in AreaMapComponent.CurrentAreaMap.Areas)
+                        {
+                            if(oldArea.Name == area.Name && area != oldArea)
+                            {
+                                existingArea = oldArea;
+                                break;
+                            }
+                            index++;
+                        }
+
+                        if (existingArea != null)
+                        {
+                            AreaMapComponent.RemoveAreas(new List<Area> { existingArea });
+
+                            if(index < AreaMapComponent.CurrentAreaMap.Areas.Count - 1)
+                            {
+                                AreaMapComponent.CurrentAreaMap.Areas.Remove(area);
+                                AreaMapComponent.CurrentAreaMap.Areas.Insert(index, area);
+                            }
+                        }
+                    }
+                }
+
+                RefreshListBox();
+            }
+        }
+
+        private void shapeMirrorYBT_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItems.Count > 0)
+            {
+                string areaText = "";
+
+                List<Area> selectedAreas = new List<Area>();
+                foreach (object areaObj in listBox1.SelectedItems)
+                {
+                    Area area = areaObj as Area;
+                    if (!area.IsSubComponent)
+                    {
+                        AreaMapComponent.MirrorY(area);
+                    }
+                }
+            }
+        }
+
+        private void shapeSymYBT_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItems.Count > 0)
+            {
+                string areaText = "";
+
+                List<Area> selectedAreas = new List<Area>();
+                foreach (object areaObj in listBox1.SelectedItems)
+                {
+                    Area area = areaObj as Area;
+                    if (!area.IsSubComponent)
+                    {
+                        area = area.Clone();
+                        AreaMapComponent.AddArea(area);
+                        AreaMapComponent.SymmetrizeY(area);
+
+                        //Search if Area already exists
+                        int index = 0;
+                        Area existingArea = null;
+                        foreach (Area oldArea in AreaMapComponent.CurrentAreaMap.Areas)
+                        {
+                            if (oldArea.Name == area.Name && area != oldArea)
+                            {
+                                existingArea = oldArea;
+                                break;
+                            }
+                            index++;
+                        }
+
+                        if (existingArea != null)
+                        {
+                            AreaMapComponent.RemoveAreas(new List<Area> { existingArea });
+
+                            if (index < AreaMapComponent.CurrentAreaMap.Areas.Count - 1)
+                            {
+                                AreaMapComponent.CurrentAreaMap.Areas.Remove(area);
+                                AreaMapComponent.CurrentAreaMap.Areas.Insert(index, area);
+                            }
+                        }
                     }
                 }
 
@@ -518,6 +661,131 @@ namespace TK.GeometryLib.AreaMapFramework
         private void addRectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AreaMapComponent.AddRectangle(new Vector2(50, 50), 120f, 80f);
+            RefreshListBox();
+        }
+
+        private void addFromOscarAssetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Comp file (*.comp)|*.comp";
+            openFileDialog1.Title = "Open an Oscar Compound";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ManagerCompanion companion = new ManagerCompanion();
+                RigDeserializer deserializer = new RigDeserializer();
+
+                PathHelper.InitPathSubstitutions(AreaMapFramework.Properties.Settings.Default.OscarPath);
+                ProjectsManager pm = ProjectsManager.Get(deserializer, new RigCreator(), companion);
+
+                RigCompound node = pm.GetRig(openFileDialog1.FileName) as RigCompound;
+                RigsProject nodeProj = null;
+                
+                foreach (RigsProject proj in pm.Projects)
+                {
+                    if (node.Path.StartsWith(proj.ResolvedProjectPath))
+                    {
+                        nodeProj = proj;
+                        break;
+                    }
+                }
+
+                if (nodeProj == null)
+                {
+                    MessageBox.Show(string.Format("Can't find Project for Node {0} !", node.FullName));
+                    return;
+                }
+
+                AssetManager am = new AssetManager(nodeProj.AssetFullPath);
+                am.GetVersions();
+                VersionGeneration version = am.Versions[0];
+
+                GenerationData genData = new GenerationData(version, node);
+
+                genData.GetRenamings();
+
+                /*
+                List<string> controllers = new List<string>();
+
+                foreach (RigElement elem in genData.Controllers)
+                {
+                    if (genData.CtrlsInfos.ContainsKey(elem.FullName) && genData.CtrlsInfos[elem.FullName].Expose)
+                    {
+                        ControllerInfos ctrl = genData.CtrlsInfos[elem.FullName];
+                        controllers.Add(string.Format("{0} : X {1}, Y {2}, Size : {3}, Color {4}", ctrl.RealName, elem.Trans.Pos.X, elem.Trans.Pos.Y, elem.Size, pm.ProjectPrefs.GetColor(elem)));
+                    }
+                }
+
+                MessageBox.Show(string.Format("Node {0} controllers :\n{1}", node, TypesHelper.Join(controllers, "\n")));
+                */
+
+                if (addOscarForm == null)
+                {
+                    editor = new AddOscarControlsUCtrl();
+                    addOscarForm = new Form();
+                    addOscarForm.Controls.Add(editor);
+                    editor.Dock = DockStyle.Fill;
+                    editor.AddBT.Click += new EventHandler(AddBT_Click);
+                }
+
+                editor.Init(AreaMapComponent, genData);
+
+                addOscarForm.Show();
+            }
+        }
+
+        void AddBT_Click(object sender, EventArgs e)
+        {
+            List<string> sel = editor.GetSelection();
+
+            List<Area> areas = new List<Area>();
+
+            float minX = float.MaxValue;
+            float maxX = float.MinValue;
+
+            float minY = float.MaxValue;
+            float maxY = float.MinValue;
+
+            foreach (string selItem in sel)
+            {
+                RigElement elem = editor.GenData.RealNamesControls[selItem];
+                Area oscarControlArea = AreaMapComponent.AddOscarControl(selItem, elem, editor.GenData.CtrlsInfos[elem.FullName], editor.Projection);
+
+                Vector2 corner = oscarControlArea.Corner;
+                Vector2 otherCorner = oscarControlArea.Shape.LowerRightCorner;
+
+                if (maxX < otherCorner.X)
+                {
+                    maxX = otherCorner.X;
+                }
+                if (minX > corner.X)
+                {
+                    minX = corner.X;
+                }
+
+                if (maxY < otherCorner.Y)
+                {
+                    maxY = otherCorner.Y;
+                }
+                if (minY > corner.Y)
+                {
+                    minY = corner.Y;
+                }
+
+                areas.Add(oscarControlArea);
+            }
+            
+            float Yextension = maxY - minY;
+            float Xextension = maxX - minX;
+
+            float scale = Math.Min(AreaMapComponent.Width / Xextension, AreaMapComponent.Height / Yextension);
+
+            foreach (Area area in areas)
+            {
+                area.Center += new Vector2(-minX, -minY);
+                area.Scale(new Vector2(scale, scale), new Vector2(0f, 0f));
+            }
+
+            AreaMapComponent.Invalidate();
             RefreshListBox();
         }
 
@@ -652,6 +920,11 @@ namespace TK.GeometryLib.AreaMapFramework
             GridOnTop = gridOnTopToolStripMenuItem.Checked;
         }
 
+        private void showCenterToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCenter = showCenterToolStripMenuItem.Checked;
+        }
+
         private void rerange01To0515ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             List<Area> sel = AreaMapComponent.GetEditSelection();
@@ -678,6 +951,44 @@ namespace TK.GeometryLib.AreaMapFramework
                 }
             }
 
+            AreaMapComponent.Invalidate();
+        }
+
+        private void bringToFrontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Area> areas = AreaMapComponent.GetEditSelection();
+
+            foreach (Area area in areas)
+            {
+                AreaMapComponent.CurrentAreaMap.Areas.Remove(area);
+                AreaMapComponent.CurrentAreaMap.Areas.Insert(0, area);
+            }
+
+            RefreshListBox();
+        }
+
+        private void sendToBackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Area> areas = AreaMapComponent.GetEditSelection();
+
+            foreach (Area area in areas)
+            {
+                AreaMapComponent.CurrentAreaMap.Areas.Remove(area);
+                AreaMapComponent.CurrentAreaMap.Areas.Add(area);
+            }
+
+            RefreshListBox();
+        }
+
+        private void centerXNUD_ValueChanged(object sender, EventArgs e)
+        {
+            AreaMapComponent.Center = new Vector2((float)centerXNUD.Value, AreaMapComponent.Center.Y);
+            AreaMapComponent.Invalidate();
+        }
+
+        private void centerYNUD_ValueChanged(object sender, EventArgs e)
+        {
+            AreaMapComponent.Center = new Vector2(AreaMapComponent.Center.X, (float)centerYNUD.Value);
             AreaMapComponent.Invalidate();
         }
     }

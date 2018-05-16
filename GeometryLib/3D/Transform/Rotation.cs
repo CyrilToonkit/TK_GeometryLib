@@ -26,7 +26,7 @@ namespace TK.GeometryLib
             mz = (double)info.GetValue("Z", typeof(double));
         }
 
-        public new void GetObjectData(SerializationInfo info, StreamingContext context)
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("X", mx);
             info.AddValue("Y", my);

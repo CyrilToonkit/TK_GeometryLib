@@ -6,6 +6,8 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using TK.GeometryLib.AreaMapFramework;
+using TK.BaseLib.CustomData;
+using TK.BaseLib;
 
 namespace TK.SynopticLib
 {
@@ -104,6 +106,15 @@ System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             {
                 setsLB.Items.Add(value);
             }
+
+            stringNode root = new stringNode("Sets :");
+
+            foreach (string value in values)
+            {
+                root.AddPath(value);
+            }
+
+            setsSNTV.Set(root, false);
         }
 
         private void addSetBT_Click(object sender, EventArgs e)
@@ -122,20 +133,28 @@ System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             if (Handler.AddSelectSet(newItem))
             {
                 setsLB.Items.Add(newItem);
+                setsSNTV.Root.AddPath(newItem);
+                setsSNTV.Reset();
             }
         }
 
         private void remSetBT_Click(object sender, EventArgs e)
         {
             object selectedObject = setsLB.SelectedItem;
+            TreeNode selectedNode = setsSNTV.SelectedNode;
 
-            if (selectedObject == null)
+            if (selectedObject != null)//selectedNode != null)
             {
-                return;
-            }
+                //string path = selectedNode.FullPath;
+                Handler.RemoveSelectSet((string)selectedObject);//path);
+                if (selectedObject != null)
+                {
+                    setsLB.Items.Remove(selectedObject);
+                }
 
-            Handler.RemoveSelectSet((string)selectedObject);
-            setsLB.Items.Remove(selectedObject);
+                //setsSNTV.Root.RemovePath(path);
+                //setsSNTV.Reset();
+            }
         }
 
         private void setsLB_SelectedValueChanged(object sender, EventArgs e)
@@ -164,6 +183,30 @@ System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
                 {
                     contextMenuStrip1.Show(this, e.X, e.Y);
                 }
+            }
+        }
+
+        private void setsSNTV_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode node = e.Node;
+            List<string> sel = Handler.GetSelectSet(node.FullPath);
+
+            if (sel.Count > 0)
+            {
+                Handler.Error(TypesHelper.Join(sel));
+                Handler.SetSelection(sel);
+            }
+        }
+
+        private void setsSNTV_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode node = e.Node;
+            List<string> sel = Handler.GetSelectSet(node.FullPath);
+
+            if (sel.Count > 0)
+            {
+                Handler.Error(TypesHelper.Join(sel));
+                Handler.SetSelection(sel);
             }
         }
     }

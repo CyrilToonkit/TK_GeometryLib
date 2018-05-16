@@ -16,6 +16,7 @@ namespace TK.GeometryLib.SynopticView
         public SynopticEditor()
         {
             InitializeComponent();
+            Text = areaMapControl1.ApplicationName;
             //areaMapControl1.AreaMapControl.AddXml("Z:\\ToonKit\\Synoptic\\Head.xml");
         }
 

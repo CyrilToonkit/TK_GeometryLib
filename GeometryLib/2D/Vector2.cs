@@ -219,6 +219,33 @@ DescriptionAttribute("Expand to see Vector's X Y.")]
         }
 
         #endregion
+
+        public static void OffsetVectors(ref Vector2[] basePoints, Vector2 translation)
+        {
+            foreach (Vector2 vec in basePoints)
+            {
+                vec.X += translation.X;
+                vec.Y += translation.Y;
+            }
+        }
+
+        public static void ScaleVectors(ref Vector2[] basePoints, float scale)
+        {
+            foreach (Vector2 vec in basePoints)
+            {
+                vec.X *= scale;
+                vec.Y *= scale;
+            }
+        }
+
+        public static void ScaleVectors(ref Vector2[] basePoints, Vector2 scale)
+        {
+            foreach (Vector2 vec in basePoints)
+            {
+                vec.X *= scale.X;
+                vec.Y *= scale.Y;
+            }
+        }
     }
 
     public class TransVector2 : ExpandableObjectConverter

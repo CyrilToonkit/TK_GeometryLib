@@ -47,8 +47,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TK_GraphComponents\bin\Release\TK_GraphComponents.dll</HintPath>
     </Reference>
+    <Reference Include="TK_NodalEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TK_OSCAR\Out\Release\TK_NodalEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="TK_OSCARLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TK_OSCAR\Out\Release\TK_OSCARLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOscarControlsUCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddOscarControlsUCtrl.Designer.cs">
+      <DependentUpon>AddOscarControlsUCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Area.cs" />
     <Compile Include="AreaMap.cs" />
     <Compile Include="AreaMapComponent.cs">
@@ -97,6 +111,10 @@
     <Compile Include="SynopticDCCHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddOscarControlsUCtrl.resx">
+      <DependentUpon>AddOscarControlsUCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AreaMapComponent.resx">
       <DependentUpon>AreaMapComponent.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -143,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\no-image.png" />
+    <None Include="Resources\skeleton.pkr" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

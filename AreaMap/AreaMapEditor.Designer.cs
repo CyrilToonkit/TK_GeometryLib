@@ -38,9 +38,14 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.saveCurrentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.exportAsAnimPickerFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.loadAsTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.loadGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.saveLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +54,10 @@
             this.switchModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.resetAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.addRectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFromOscarAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.transformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.rerange01To0515ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +68,7 @@
             this.addSelectionToLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.collapsibleGroup3 = new TK.GraphComponents.CollapsibleGroup();
             this.collapsibleGroup1 = new TK.GraphComponents.CollapsibleGroup();
             this.collapsibleGroup2 = new TK.GraphComponents.CollapsibleGroup();
@@ -77,14 +85,28 @@
             this.collapsibleGroup4 = new TK.GraphComponents.CollapsibleGroup();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.shapeSymBT = new System.Windows.Forms.Button();
-            this.shapeMirrorBT = new System.Windows.Forms.Button();
+            this.shapeSymYBT = new System.Windows.Forms.Button();
             this.shapeDuplicateBT = new System.Windows.Forms.Button();
             this.shapeRemoveBT = new System.Windows.Forms.Button();
+            this.shapeMirrorBT = new System.Windows.Forms.Button();
+            this.shapeSymBT = new System.Windows.Forms.Button();
+            this.shapeMirrorYBT = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.removeTabBT = new System.Windows.Forms.Button();
             this.tabNameTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
+            this.bringToFrontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendToBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.centerXNUD = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.centerYNUD = new System.Windows.Forms.NumericUpDown();
+            this.showCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areaMapControl1 = new TK.GeometryLib.AreaMapFramework.AreaMapControl();
             this.libraryUCtrl1 = new TK.GeometryLib.AreaMapFramework.Library.LibraryUCtrl();
             this.menuStrip1.SuspendLayout();
@@ -98,6 +120,10 @@
             this.collapsibleGroup4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -111,7 +137,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.menuStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,9 +159,14 @@
             this.toolStripMenuItem2,
             this.saveCurrentToolStripMenuItem,
             this.saveToolStripMenuItem,
+            this.toolStripMenuItem8,
+            this.exportAsAnimPickerFileToolStripMenuItem,
+            this.toolStripMenuItem9,
             this.loadToolStripMenuItem,
             this.toolStripMenuItem4,
             this.loadAsTabToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.loadGroupsToolStripMenuItem,
             this.toolStripMenuItem5,
             this.saveLibraryToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -145,60 +176,88 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(169, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(267, 6);
             // 
             // saveCurrentToolStripMenuItem
             // 
             this.saveCurrentToolStripMenuItem.Name = "saveCurrentToolStripMenuItem";
-            this.saveCurrentToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveCurrentToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.saveCurrentToolStripMenuItem.Text = "Save As...";
             this.saveCurrentToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.saveToolStripMenuItem.Text = "Save All...";
             this.saveToolStripMenuItem.Visible = false;
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(267, 6);
+            // 
+            // exportAsAnimPickerFileToolStripMenuItem
+            // 
+            this.exportAsAnimPickerFileToolStripMenuItem.Name = "exportAsAnimPickerFileToolStripMenuItem";
+            this.exportAsAnimPickerFileToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.exportAsAnimPickerFileToolStripMenuItem.Text = "Export as animPicker file...";
+            this.exportAsAnimPickerFileToolStripMenuItem.Click += new System.EventHandler(this.exportAsAnimPickerFileToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(267, 6);
+            // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.loadToolStripMenuItem.Text = "Load...";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(169, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(267, 6);
             this.toolStripMenuItem4.Visible = false;
             // 
             // loadAsTabToolStripMenuItem
             // 
             this.loadAsTabToolStripMenuItem.Name = "loadAsTabToolStripMenuItem";
-            this.loadAsTabToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.loadAsTabToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.loadAsTabToolStripMenuItem.Text = "Load as Tab...";
-            this.loadAsTabToolStripMenuItem.Visible = false;
             this.loadAsTabToolStripMenuItem.Click += new System.EventHandler(this.loadAsTabToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            // 
+            // loadGroupsToolStripMenuItem
+            // 
+            this.loadGroupsToolStripMenuItem.Name = "loadGroupsToolStripMenuItem";
+            this.loadGroupsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.loadGroupsToolStripMenuItem.Text = "Load groups...";
+            this.loadGroupsToolStripMenuItem.Click += new System.EventHandler(this.loadGroupsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(169, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(267, 6);
             // 
             // saveLibraryToolStripMenuItem
             // 
             this.saveLibraryToolStripMenuItem.Name = "saveLibraryToolStripMenuItem";
-            this.saveLibraryToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveLibraryToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.saveLibraryToolStripMenuItem.Text = "Save library";
             this.saveLibraryToolStripMenuItem.Click += new System.EventHandler(this.saveLibraryToolStripMenuItem_Click);
             // 
@@ -210,11 +269,16 @@
             this.switchModeToolStripMenuItem,
             this.toolStripMenuItem3,
             this.resetAllToolStripMenuItem,
-            this.addRectToolStripMenuItem,
             this.toolStripMenuItem6,
+            this.addRectToolStripMenuItem,
+            this.addFromOscarAssetToolStripMenuItem,
+            this.toolStripMenuItem10,
             this.transformToolStripMenuItem,
             this.toolStripMenuItem7,
-            this.rerange01To0515ToolStripMenuItem});
+            this.rerange01To0515ToolStripMenuItem,
+            this.toolStripMenuItem11,
+            this.bringToFrontToolStripMenuItem,
+            this.sendToBackToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -250,6 +314,11 @@
             this.resetAllToolStripMenuItem.Text = "Reset All";
             this.resetAllToolStripMenuItem.Click += new System.EventHandler(this.resetAllToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(253, 6);
+            // 
             // addRectToolStripMenuItem
             // 
             this.addRectToolStripMenuItem.Name = "addRectToolStripMenuItem";
@@ -257,10 +326,17 @@
             this.addRectToolStripMenuItem.Text = "AddRectangle";
             this.addRectToolStripMenuItem.Click += new System.EventHandler(this.addRectToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem6
+            // addFromOscarAssetToolStripMenuItem
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(253, 6);
+            this.addFromOscarAssetToolStripMenuItem.Name = "addFromOscarAssetToolStripMenuItem";
+            this.addFromOscarAssetToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.addFromOscarAssetToolStripMenuItem.Text = "Add from Oscar Asset";
+            this.addFromOscarAssetToolStripMenuItem.Click += new System.EventHandler(this.addFromOscarAssetToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(253, 6);
             // 
             // transformToolStripMenuItem
             // 
@@ -285,7 +361,8 @@
             // 
             this.displayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showGridToolStripMenuItem,
-            this.gridOnTopToolStripMenuItem});
+            this.gridOnTopToolStripMenuItem,
+            this.showCenterToolStripMenuItem});
             this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
             this.displayToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.displayToolStripMenuItem.Text = "Display";
@@ -336,6 +413,11 @@
             this.documentationToolStripMenuItem.Text = "Documentation";
             this.documentationToolStripMenuItem.Click += new System.EventHandler(this.documentationToolStripMenuItem_Click);
             // 
+            // saveFileDialog2
+            // 
+            this.saveFileDialog2.FileName = "NewAreaMap.pkr";
+            this.saveFileDialog2.Filter = "Picker file|*.pkr";
+            // 
             // collapsibleGroup3
             // 
             this.collapsibleGroup3.AllowResize = true;
@@ -351,7 +433,7 @@
             this.collapsibleGroup3.Name = "collapsibleGroup3";
             this.collapsibleGroup3.OpenedBaseHeight = 150;
             this.collapsibleGroup3.OpenedBaseWidth = 100;
-            this.collapsibleGroup3.Size = new System.Drawing.Size(44, 480);
+            this.collapsibleGroup3.Size = new System.Drawing.Size(61, 480);
             this.collapsibleGroup3.TabIndex = 2;
             this.collapsibleGroup3.TabStop = false;
             this.collapsibleGroup3.Text = "Library";
@@ -365,17 +447,18 @@
             this.collapsibleGroup1.Controls.Add(this.collapsibleGroup6);
             this.collapsibleGroup1.Controls.Add(this.collapsibleGroup5);
             this.collapsibleGroup1.Controls.Add(this.collapsibleGroup4);
+            this.collapsibleGroup1.Controls.Add(this.tableLayoutPanel5);
             this.collapsibleGroup1.Controls.Add(this.tableLayoutPanel1);
             this.collapsibleGroup1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.collapsibleGroup1.Dock = System.Windows.Forms.DockStyle.Right;
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.All;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(432, 24);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(417, 24);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 150;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(298, 480);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(313, 480);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Edit";
@@ -390,11 +473,11 @@
             this.collapsibleGroup2.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup2.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 227);
+            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 203);
             this.collapsibleGroup2.Name = "collapsibleGroup2";
             this.collapsibleGroup2.OpenedBaseHeight = 179;
             this.collapsibleGroup2.OpenedBaseWidth = 200;
-            this.collapsibleGroup2.Size = new System.Drawing.Size(292, 88);
+            this.collapsibleGroup2.Size = new System.Drawing.Size(307, 64);
             this.collapsibleGroup2.TabIndex = 1;
             this.collapsibleGroup2.TabStop = false;
             this.collapsibleGroup2.Text = "Properties";
@@ -412,7 +495,7 @@
             this.propertyGrid1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.propertyGrid1.Location = new System.Drawing.Point(3, 19);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(286, 66);
+            this.propertyGrid1.Size = new System.Drawing.Size(301, 42);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.ViewBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -428,11 +511,11 @@
             this.collapsibleGroup6.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup6.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 315);
+            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 267);
             this.collapsibleGroup6.Name = "collapsibleGroup6";
             this.collapsibleGroup6.OpenedBaseHeight = 56;
             this.collapsibleGroup6.OpenedBaseWidth = 250;
-            this.collapsibleGroup6.Size = new System.Drawing.Size(292, 44);
+            this.collapsibleGroup6.Size = new System.Drawing.Size(307, 68);
             this.collapsibleGroup6.TabIndex = 9;
             this.collapsibleGroup6.TabStop = false;
             this.collapsibleGroup6.Text = "MetaData";
@@ -446,7 +529,7 @@
             this.metaDataTB.Multiline = true;
             this.metaDataTB.Name = "metaDataTB";
             this.metaDataTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.metaDataTB.Size = new System.Drawing.Size(286, 22);
+            this.metaDataTB.Size = new System.Drawing.Size(301, 46);
             this.metaDataTB.TabIndex = 1;
             this.metaDataTB.WordWrap = false;
             this.metaDataTB.TextChanged += new System.EventHandler(this.metaDataTB_TextChanged);
@@ -462,11 +545,11 @@
             this.collapsibleGroup5.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup5.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 359);
+            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 335);
             this.collapsibleGroup5.Name = "collapsibleGroup5";
             this.collapsibleGroup5.OpenedBaseHeight = 100;
             this.collapsibleGroup5.OpenedBaseWidth = 200;
-            this.collapsibleGroup5.Size = new System.Drawing.Size(292, 118);
+            this.collapsibleGroup5.Size = new System.Drawing.Size(307, 142);
             this.collapsibleGroup5.TabIndex = 2;
             this.collapsibleGroup5.TabStop = false;
             this.collapsibleGroup5.Text = "Groups";
@@ -485,7 +568,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupsGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.groupsGridView.Size = new System.Drawing.Size(286, 69);
+            this.groupsGridView.Size = new System.Drawing.Size(301, 93);
             this.groupsGridView.TabIndex = 1;
             this.groupsGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellValueChanged);
             this.groupsGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.groupsGridView_RowHeaderMouseClick);
@@ -499,17 +582,17 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveShapesBT, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddBT, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddObjsBT, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveBT, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 88);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 112);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(286, 27);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(301, 27);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupRemoveShapesBT
@@ -518,12 +601,12 @@
             this.groupRemoveShapesBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupRemoveShapesBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupRemoveShapesBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.groupRemoveShapesBT.Location = new System.Drawing.Point(211, 1);
+            this.groupRemoveShapesBT.Location = new System.Drawing.Point(201, 1);
             this.groupRemoveShapesBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupRemoveShapesBT.Name = "groupRemoveShapesBT";
-            this.groupRemoveShapesBT.Size = new System.Drawing.Size(74, 25);
+            this.groupRemoveShapesBT.Size = new System.Drawing.Size(99, 25);
             this.groupRemoveShapesBT.TabIndex = 3;
-            this.groupRemoveShapesBT.Text = "X";
+            this.groupRemoveShapesBT.Text = "- Shapes";
             this.groupRemoveShapesBT.UseVisualStyleBackColor = false;
             this.groupRemoveShapesBT.Click += new System.EventHandler(this.groupRemoveShapesBT_Click);
             // 
@@ -536,7 +619,7 @@
             this.groupAddBT.Location = new System.Drawing.Point(1, 1);
             this.groupAddBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupAddBT.Name = "groupAddBT";
-            this.groupAddBT.Size = new System.Drawing.Size(86, 25);
+            this.groupAddBT.Size = new System.Drawing.Size(81, 25);
             this.groupAddBT.TabIndex = 1;
             this.groupAddBT.Text = "Group +";
             this.groupAddBT.UseVisualStyleBackColor = false;
@@ -547,12 +630,12 @@
             this.groupAddObjsBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.groupAddObjsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupAddObjsBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.groupAddObjsBT.Location = new System.Drawing.Point(123, 1);
+            this.groupAddObjsBT.Location = new System.Drawing.Point(118, 1);
             this.groupAddObjsBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupAddObjsBT.Name = "groupAddObjsBT";
-            this.groupAddObjsBT.Size = new System.Drawing.Size(86, 25);
+            this.groupAddObjsBT.Size = new System.Drawing.Size(81, 25);
             this.groupAddObjsBT.TabIndex = 2;
-            this.groupAddObjsBT.Text = "Shapes +";
+            this.groupAddObjsBT.Text = "+ Shapes";
             this.groupAddObjsBT.UseVisualStyleBackColor = false;
             this.groupAddObjsBT.Click += new System.EventHandler(this.groupAddObjsBT_Click);
             // 
@@ -562,7 +645,7 @@
             this.groupRemoveBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupRemoveBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupRemoveBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.groupRemoveBT.Location = new System.Drawing.Point(89, 1);
+            this.groupRemoveBT.Location = new System.Drawing.Point(84, 1);
             this.groupRemoveBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupRemoveBT.Name = "groupRemoveBT";
             this.groupRemoveBT.Size = new System.Drawing.Size(28, 25);
@@ -582,11 +665,11 @@
             this.collapsibleGroup4.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup4.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup4.Location = new System.Drawing.Point(3, 46);
+            this.collapsibleGroup4.Location = new System.Drawing.Point(3, 73);
             this.collapsibleGroup4.Name = "collapsibleGroup4";
             this.collapsibleGroup4.OpenedBaseHeight = 150;
             this.collapsibleGroup4.OpenedBaseWidth = 200;
-            this.collapsibleGroup4.Size = new System.Drawing.Size(292, 181);
+            this.collapsibleGroup4.Size = new System.Drawing.Size(307, 130);
             this.collapsibleGroup4.TabIndex = 7;
             this.collapsibleGroup4.TabStop = false;
             this.collapsibleGroup4.Text = "Areas";
@@ -602,58 +685,47 @@
             this.listBox1.Location = new System.Drawing.Point(3, 19);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(286, 124);
+            this.listBox1.Size = new System.Drawing.Size(301, 79);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel2.Controls.Add(this.shapeSymBT, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.shapeMirrorBT, 0, 0);
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.Controls.Add(this.shapeSymYBT, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeDuplicateBT, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.shapeRemoveBT, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shapeRemoveBT, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shapeMirrorBT, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shapeSymBT, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shapeMirrorYBT, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 151);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 100);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(286, 27);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(301, 27);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // shapeSymBT
+            // shapeSymYBT
             // 
-            this.shapeSymBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.shapeSymBT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shapeSymBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shapeSymBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.shapeSymBT.Location = new System.Drawing.Point(139, 1);
-            this.shapeSymBT.Margin = new System.Windows.Forms.Padding(1);
-            this.shapeSymBT.Name = "shapeSymBT";
-            this.shapeSymBT.Size = new System.Drawing.Size(67, 25);
-            this.shapeSymBT.TabIndex = 3;
-            this.shapeSymBT.Text = "Sym";
-            this.shapeSymBT.UseVisualStyleBackColor = false;
-            this.shapeSymBT.Click += new System.EventHandler(this.shapeSymBT_Click);
-            // 
-            // shapeMirrorBT
-            // 
-            this.shapeMirrorBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.shapeMirrorBT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shapeMirrorBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shapeMirrorBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.shapeMirrorBT.Location = new System.Drawing.Point(70, 1);
-            this.shapeMirrorBT.Margin = new System.Windows.Forms.Padding(1);
-            this.shapeMirrorBT.Name = "shapeMirrorBT";
-            this.shapeMirrorBT.Size = new System.Drawing.Size(67, 25);
-            this.shapeMirrorBT.TabIndex = 2;
-            this.shapeMirrorBT.Text = "Mirror";
-            this.shapeMirrorBT.UseVisualStyleBackColor = false;
-            this.shapeMirrorBT.Click += new System.EventHandler(this.shapeMirrorBT_Click);
+            this.shapeSymYBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.shapeSymYBT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shapeSymYBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shapeSymYBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.shapeSymYBT.Location = new System.Drawing.Point(185, 1);
+            this.shapeSymYBT.Margin = new System.Windows.Forms.Padding(1);
+            this.shapeSymYBT.Name = "shapeSymYBT";
+            this.shapeSymYBT.Size = new System.Drawing.Size(44, 25);
+            this.shapeSymYBT.TabIndex = 5;
+            this.shapeSymYBT.Text = "YSym";
+            this.shapeSymYBT.UseVisualStyleBackColor = false;
+            this.shapeSymYBT.Click += new System.EventHandler(this.shapeSymYBT_Click);
             // 
             // shapeDuplicateBT
             // 
@@ -664,7 +736,7 @@
             this.shapeDuplicateBT.Location = new System.Drawing.Point(1, 1);
             this.shapeDuplicateBT.Margin = new System.Windows.Forms.Padding(1);
             this.shapeDuplicateBT.Name = "shapeDuplicateBT";
-            this.shapeDuplicateBT.Size = new System.Drawing.Size(67, 25);
+            this.shapeDuplicateBT.Size = new System.Drawing.Size(44, 25);
             this.shapeDuplicateBT.TabIndex = 1;
             this.shapeDuplicateBT.Text = "Dup";
             this.shapeDuplicateBT.UseVisualStyleBackColor = false;
@@ -676,14 +748,59 @@
             this.shapeRemoveBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shapeRemoveBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shapeRemoveBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.shapeRemoveBT.Location = new System.Drawing.Point(208, 1);
+            this.shapeRemoveBT.Location = new System.Drawing.Point(231, 1);
             this.shapeRemoveBT.Margin = new System.Windows.Forms.Padding(1);
             this.shapeRemoveBT.Name = "shapeRemoveBT";
-            this.shapeRemoveBT.Size = new System.Drawing.Size(77, 25);
+            this.shapeRemoveBT.Size = new System.Drawing.Size(69, 25);
             this.shapeRemoveBT.TabIndex = 0;
             this.shapeRemoveBT.Text = "X";
             this.shapeRemoveBT.UseVisualStyleBackColor = false;
             this.shapeRemoveBT.Click += new System.EventHandler(this.shapeRemoveBT_Click);
+            // 
+            // shapeMirrorBT
+            // 
+            this.shapeMirrorBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.shapeMirrorBT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shapeMirrorBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shapeMirrorBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.shapeMirrorBT.Location = new System.Drawing.Point(47, 1);
+            this.shapeMirrorBT.Margin = new System.Windows.Forms.Padding(1);
+            this.shapeMirrorBT.Name = "shapeMirrorBT";
+            this.shapeMirrorBT.Size = new System.Drawing.Size(44, 25);
+            this.shapeMirrorBT.TabIndex = 2;
+            this.shapeMirrorBT.Text = "XMirror";
+            this.shapeMirrorBT.UseVisualStyleBackColor = false;
+            this.shapeMirrorBT.Click += new System.EventHandler(this.shapeMirrorBT_Click);
+            // 
+            // shapeSymBT
+            // 
+            this.shapeSymBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.shapeSymBT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shapeSymBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shapeSymBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.shapeSymBT.Location = new System.Drawing.Point(139, 1);
+            this.shapeSymBT.Margin = new System.Windows.Forms.Padding(1);
+            this.shapeSymBT.Name = "shapeSymBT";
+            this.shapeSymBT.Size = new System.Drawing.Size(44, 25);
+            this.shapeSymBT.TabIndex = 3;
+            this.shapeSymBT.Text = "XSym";
+            this.shapeSymBT.UseVisualStyleBackColor = false;
+            this.shapeSymBT.Click += new System.EventHandler(this.shapeSymBT_Click);
+            // 
+            // shapeMirrorYBT
+            // 
+            this.shapeMirrorYBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.shapeMirrorYBT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shapeMirrorYBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shapeMirrorYBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.shapeMirrorYBT.Location = new System.Drawing.Point(93, 1);
+            this.shapeMirrorYBT.Margin = new System.Windows.Forms.Padding(1);
+            this.shapeMirrorYBT.Name = "shapeMirrorYBT";
+            this.shapeMirrorYBT.Size = new System.Drawing.Size(44, 25);
+            this.shapeMirrorYBT.TabIndex = 4;
+            this.shapeMirrorYBT.Text = "YMirror";
+            this.shapeMirrorYBT.UseVisualStyleBackColor = false;
+            this.shapeMirrorYBT.Click += new System.EventHandler(this.shapeMirrorYBT_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -699,7 +816,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 27);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(307, 27);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // removeTabBT
@@ -708,7 +826,7 @@
             this.removeTabBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeTabBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeTabBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.removeTabBT.Location = new System.Drawing.Point(263, 1);
+            this.removeTabBT.Location = new System.Drawing.Point(278, 1);
             this.removeTabBT.Margin = new System.Windows.Forms.Padding(1);
             this.removeTabBT.Name = "removeTabBT";
             this.removeTabBT.Size = new System.Drawing.Size(28, 25);
@@ -727,7 +845,7 @@
             this.tabNameTB.Location = new System.Drawing.Point(77, 2);
             this.tabNameTB.Margin = new System.Windows.Forms.Padding(2);
             this.tabNameTB.Name = "tabNameTB";
-            this.tabNameTB.Size = new System.Drawing.Size(183, 23);
+            this.tabNameTB.Size = new System.Drawing.Size(198, 23);
             this.tabNameTB.TabIndex = 4;
             this.tabNameTB.TextChanged += new System.EventHandler(this.tabNameTB_TextChanged);
             // 
@@ -742,6 +860,153 @@
             this.label1.Text = "Tab name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(253, 6);
+            // 
+            // bringToFrontToolStripMenuItem
+            // 
+            this.bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
+            this.bringToFrontToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.bringToFrontToolStripMenuItem.Text = "Bring to front";
+            this.bringToFrontToolStripMenuItem.Click += new System.EventHandler(this.bringToFrontToolStripMenuItem_Click);
+            // 
+            // sendToBackToolStripMenuItem
+            // 
+            this.sendToBackToolStripMenuItem.Name = "sendToBackToolStripMenuItem";
+            this.sendToBackToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.sendToBackToolStripMenuItem.Text = "Send to back";
+            this.sendToBackToolStripMenuItem.Click += new System.EventHandler(this.sendToBackToolStripMenuItem_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.button1.Location = new System.Drawing.Point(171, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 98);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.textBox1.Location = new System.Drawing.Point(77, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 4;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.centerYNUD, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.centerXNUD, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 46);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(307, 27);
+            this.tableLayoutPanel5.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 27);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "CenterX";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // centerXNUD
+            // 
+            this.centerXNUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerXNUD.Location = new System.Drawing.Point(78, 3);
+            this.centerXNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.centerXNUD.Name = "centerXNUD";
+            this.centerXNUD.Size = new System.Drawing.Size(72, 23);
+            this.centerXNUD.TabIndex = 4;
+            this.centerXNUD.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.centerXNUD.ValueChanged += new System.EventHandler(this.centerXNUD_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(156, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 27);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "CenterY";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // centerYNUD
+            // 
+            this.centerYNUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerYNUD.Location = new System.Drawing.Point(231, 3);
+            this.centerYNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.centerYNUD.Name = "centerYNUD";
+            this.centerYNUD.Size = new System.Drawing.Size(73, 23);
+            this.centerYNUD.TabIndex = 6;
+            this.centerYNUD.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.centerYNUD.ValueChanged += new System.EventHandler(this.centerYNUD_ValueChanged);
+            // 
+            // showCenterToolStripMenuItem
+            // 
+            this.showCenterToolStripMenuItem.CheckOnClick = true;
+            this.showCenterToolStripMenuItem.Name = "showCenterToolStripMenuItem";
+            this.showCenterToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.showCenterToolStripMenuItem.Text = "Show center";
+            this.showCenterToolStripMenuItem.CheckedChanged += new System.EventHandler(this.showCenterToolStripMenuItem_CheckedChanged);
+            // 
             // areaMapControl1
             // 
             this.areaMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -749,11 +1014,11 @@
             synopticDCCHandler1.ModelName = "No model !";
             this.areaMapControl1.Handler = synopticDCCHandler1;
             this.areaMapControl1.IsDocked = true;
-            this.areaMapControl1.Location = new System.Drawing.Point(44, 24);
+            this.areaMapControl1.Location = new System.Drawing.Point(61, 24);
             this.areaMapControl1.Name = "areaMapControl1";
             this.areaMapControl1.OptionsShowing = true;
             this.areaMapControl1.ShowGrid = false;
-            this.areaMapControl1.Size = new System.Drawing.Size(388, 480);
+            this.areaMapControl1.Size = new System.Drawing.Size(356, 480);
             this.areaMapControl1.TabIndex = 3;
             // 
             // libraryUCtrl1
@@ -762,7 +1027,7 @@
             this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
             this.libraryUCtrl1.Name = "libraryUCtrl1";
-            this.libraryUCtrl1.Size = new System.Drawing.Size(38, 458);
+            this.libraryUCtrl1.Size = new System.Drawing.Size(55, 458);
             this.libraryUCtrl1.TabIndex = 1;
             // 
             // AreaMapEditor
@@ -790,6 +1055,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -854,6 +1124,28 @@
         private System.Windows.Forms.ToolStripMenuItem gridOnTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem rerange01To0515ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem exportAsAnimPickerFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem loadGroupsToolStripMenuItem;
+        private System.Windows.Forms.Button shapeMirrorYBT;
+        private System.Windows.Forms.Button shapeSymYBT;
+        private System.Windows.Forms.ToolStripMenuItem addFromOscarAssetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripMenuItem bringToFrontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendToBackToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.NumericUpDown centerYNUD;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown centerXNUD;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem showCenterToolStripMenuItem;
 
 
     }

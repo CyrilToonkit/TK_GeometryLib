@@ -164,12 +164,12 @@ namespace TK.SynopticLib
             // 
             // _areaMapComponent
             // 
-            this._areaMapComponent.Scaling = 1.99F;
-            this._areaMapComponent.Size = new System.Drawing.Size(581, 398);
+            this._areaMapComponent.Scaling = 1.955F;
+            this._areaMapComponent.Size = new System.Drawing.Size(581, 391);
             // 
             // tabControl1
             // 
-            this.tabControl1.Size = new System.Drawing.Size(581, 398);
+            this.tabControl1.Size = new System.Drawing.Size(581, 391);
             // 
             // DCCAreaMapControl
             // 

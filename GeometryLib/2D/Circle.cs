@@ -52,6 +52,18 @@ namespace TK.GeometryLib
             set { _center = value; }
         }
 
+        public override float Height
+        {
+            get { return Radius * 2.0f;}
+            set { Radius = value / 2.0f; }
+        }
+
+        public override float Width
+        {
+            get { return Radius * 2.0f; }
+            set { Radius = value / 2.0f; }
+        }
+
         public override void Scale(Vector2 inScale)
         {
             Radius = Math.Max(2, _radius * inScale.X);

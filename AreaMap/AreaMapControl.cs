@@ -256,10 +256,10 @@ namespace TK.GeometryLib.AreaMapFramework
             List<Area> areas = new List<Area>();
             foreach (string item in inSelectionList)
             {
-                Area found = AreaMapComponent.FindAreaFromMetaData(item);
-                if (found != null)
+                List<Area> found = AreaMapComponent.FindAreaFromMetaData(item);
+                if (found != null && found.Count > 0)
                 {
-                    areas.Add(found);
+                    areas.AddRange(found);
                 }
             }
 
@@ -289,6 +289,25 @@ namespace TK.GeometryLib.AreaMapFramework
         private void allwaysOnTop_CheckedChanged(object sender, EventArgs e)
         {
             ParentForm.TopMost = allwaysOnTop.Checked;
+        }
+
+        private void tabControl1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)
+            {
+                for (int i = 0; i < tabControl1.TabCount; i++)
+                {
+                    System.Drawing.Rectangle r = tabControl1.GetTabRect(i);
+
+                    if (r.Contains(e.Location))
+                    {
+                        tabControl1.SelectedIndex = i;
+                        return;
+                    }
+                }
+            }
+
+            return;
         }
     }
 }

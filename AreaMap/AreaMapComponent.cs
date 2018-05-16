@@ -10,6 +10,9 @@ using TK.GeometryLib;
 using System.Xml.Serialization;
 using System.IO;
 using TK.BaseLib;
+using TK.GraphComponents.Dialogs;
+using TK_OSCARLib;
+using TK.BaseLib.Math3D;
 
 namespace TK.GeometryLib.AreaMapFramework
 {
@@ -234,6 +237,10 @@ namespace TK.GeometryLib.AreaMapFramework
         bool _showAll = false;
         bool _showGrid = false;
         bool _gridOnTop = false;
+        bool _showCenter = false;
+
+        int _centerX = 50;
+        int _centerY = 100;
 
         DialogResult rslt = DialogResult.Ignore;
 
@@ -254,7 +261,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public List<AreaGroup> Groups
         {
-            get{ return CurrentAreaMap.Groups; }
+            get { return CurrentAreaMap.Groups; }
             set { CurrentAreaMap.Groups = value; }
         }
 
@@ -1142,51 +1149,62 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public void HideGroup(string arg)
         {
-            AreaGroup areaG = FindGroup(arg);
+            AreaGroup areaG = null;
+            areaG = FindGroup(arg);
             if (areaG != null)
             {
                 areaG.Visible = false;
                 ApplyGroupValues();
                 Invalidate();
             }
-            else
-            {
-                List<AreaMapComponent> pages = GetSynopticPages();
 
-                foreach (AreaMapComponent page in pages)
+            List<AreaMapComponent> pages = GetSynopticPages();
+
+            foreach (AreaMapComponent page in pages)
+            {
+                foreach (AreaMap map in page.Maps)
                 {
-                    areaG = page.FindGroup(arg);
+                    areaG = map.FindGroup(arg);
 
                     if (areaG != null)
                     {
-                        page.HideGroup(areaG.Name);
+                        areaG.Visible = false;
                     }
                 }
+
+                page.ApplyGroupValues();
+                page.Invalidate();
             }
         }
 
         public void ShowGroup(string arg)
         {
-            AreaGroup areaG = FindGroup(arg);
+            AreaGroup areaG = null;
+            areaG = FindGroup(arg);
+
             if (areaG != null)
             {
                 areaG.Visible = true;
                 ApplyGroupValues();
                 Invalidate();
             }
-            else
-            {
-                List<AreaMapComponent> pages = GetSynopticPages();
 
-                foreach (AreaMapComponent page in pages)
+            List<AreaMapComponent> pages = GetSynopticPages();
+
+            foreach (AreaMapComponent page in pages)
+            {
+                foreach (AreaMap map in page.Maps)
                 {
-                    areaG = page.FindGroup(arg);
+                    areaG = map.FindGroup(arg);
 
                     if (areaG != null)
                     {
-                        page.ShowGroup(areaG.Name);
+                        areaG.Visible = true;
                     }
                 }
+
+                page.ApplyGroupValues();
+                page.Invalidate();
             }
         }
 
@@ -1270,19 +1288,20 @@ namespace TK.GeometryLib.AreaMapFramework
             return null;
         }
 
-        public Area FindAreaFromMetaData(string item)
+        public List<Area> FindAreaFromMetaData(string item)
         {
+            List<Area> foundAreas = new List<Area>();
             List<Area> areas = GetAllAreas();
 
             foreach (Area area in areas)
             {
                 if (area.MetaData == item)
                 {
-                    return area;
+                    foundAreas.Add(area);
                 }
             }
 
-            return null;
+            return foundAreas;
         }
 
         private string Remove(string metaData, string funcName)
@@ -2125,7 +2144,12 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public Vector2 Center
         {
-            get { return new Vector2((float)_dimensions.Width / 2f, (float)_dimensions.Height / 2f); }
+            get { return new Vector2((float)_centerX, (float)_centerY); }
+            set
+            {
+                _centerX = (int)value.X;
+                _centerY = (int)value.Y;
+            }
         }
 
         public bool GridOnTop
@@ -2138,6 +2162,12 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             get { return _showGrid; }
             set { _showGrid = value; Invalidate(); }
+        }
+
+        public bool ShowCenter
+        {
+            get { return _showCenter; }
+            set { _showCenter = value; Invalidate(); }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -2193,6 +2223,13 @@ namespace TK.GeometryLib.AreaMapFramework
             {
                 DrawGrid(e.Graphics);
             }
+
+            //Center
+            if (_showCenter)
+            {
+                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X + _centerX * _scaling, _offset.Y), new PointF(_offset.X + _centerX * _scaling, _dimensions.Height * _scaling + _offset.Y));
+                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X, _offset.Y + _centerY * _scaling), new PointF(_dimensions.Width * _scaling + _offset.X, _offset.Y + _centerY * _scaling));
+            }
         }
 
         private void DrawGrid(Graphics graphics)
@@ -2220,6 +2257,9 @@ namespace TK.GeometryLib.AreaMapFramework
                 {
                     RefreshOffset();
                 }
+
+                _centerX = BackgroundImage.Size.Width / 2;
+                _centerY = BackgroundImage.Size.Height / 2;
             }
         }
 
@@ -2307,6 +2347,8 @@ namespace TK.GeometryLib.AreaMapFramework
                 }
             }
 
+            DumpGroups();
+
             inAreaMap.Path = inPath;
             XmlSerializer ser = new XmlSerializer(typeof(AreaMap));
 
@@ -2333,12 +2375,333 @@ namespace TK.GeometryLib.AreaMapFramework
                         }
                     }
                 }
-
+                */
                 //Groups
-                if (_groups.Count > 0)
+                /*
+                if (Groups.Count > 0)
                 {
                     SaveGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
-                }*/
+                }
+                 */
+            }
+            catch (Exception e) { status = e.Message; }
+
+            if (writer != null)
+            {
+                writer.Close();
+            }
+
+            return status;
+        }
+
+        internal string ExportAsPicker(AreaMap inAreaMap, string inPath, bool inAll, double alphaBoost)
+        {
+            string status = "";
+            StreamWriter writer = null;
+
+            string skeleton = Properties.Resources.skeleton;
+            StringBuilder pickerBuilder = new StringBuilder();
+
+            List<string> strItems = new List<string>();
+            string itemsPostChunk = string.Empty;
+            string controlsSkeleton = "'controls': [$METADATA]";
+            string scriptSkeleton = "'action_mode': True, 'action_script': u'$METADATA'";
+
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+
+            Vector2 offset = Vector2.Null;
+
+            string absPath = inAreaMap.GetAbsolutePath(inAreaMap.ImagePath);
+            if (File.Exists(absPath))
+            {
+                FileStream stream = new FileStream(absPath, FileMode.Open, FileAccess.Read);
+                Image backgroundImage = Image.FromStream(stream);
+                stream.Close();
+
+                offset = new Vector2(backgroundImage.Width / 2.0f, backgroundImage.Height / 2.0f);
+
+                itemsPostChunk = ", 'background': u'" + absPath.Replace("\\", "/") + "'";
+            }
+            else
+            {
+                //Re-center
+                float minX = float.MaxValue;
+                float maxX = float.MinValue;
+                float minY = float.MaxValue;
+                float maxY = float.MinValue;
+
+                foreach (Area area in inAreaMap.Areas)
+                {
+                    Vector2 upperLeft = area.Corner;
+                    Vector2 upperRight = area.Shape.UpperRightCorner;
+                    Vector2 lowerLeft = area.Shape.LowerLeftCorner;
+                    Vector2 lowerRight = area.Shape.LowerRightCorner;
+
+                    float shapeminX = Math.Min(upperLeft.X, lowerLeft.X);
+                    float shapemaxX = Math.Max(upperRight.X, lowerRight.X);
+                    float shapeminY = Math.Min(upperLeft.Y, upperRight.Y);
+                    float shapemaxY = Math.Max(lowerLeft.Y, lowerRight.Y);
+
+                    if (shapeminX < minX)
+                    {
+                        minX = shapeminX;
+                    }
+                    if (shapemaxX > maxX)
+                    {
+                        maxX = shapemaxX;
+                    }
+
+                    if (shapeminY < minY)
+                    {
+                        minY = shapeminY;
+                    }
+                    if (shapemaxY > maxY)
+                    {
+                        maxY = shapemaxY;
+                    }
+                }
+
+                offset = new Vector2((minX + maxX) / 2.0f, (minY + maxY) / 2.0f);
+            }
+            try
+            {
+                writer = new StreamWriter(inPath, false);
+                Vector2 center = Vector2.Null;
+                List<Area> areas = new List<Area>(inAreaMap.Areas);
+                areas.Reverse();
+
+                foreach (Area area in areas)
+                {
+                    List<string> handles = new List<string>();
+                    switch(area.Type)
+                    {
+                        case ConvertibleShapeType.Circle:
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", 0f, 0f));
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", area.Radius, 0f));
+                            break;
+                        case ConvertibleShapeType.Rectangle:
+                            Rectangle rectangleShape = area.Shape as Rectangle;
+                            center = area.Center;
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", area.Corner.X - center.X, -(area.Corner.Y - center.Y)));
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", area.Corner.X + rectangleShape.Width - center.X, -(area.Corner.Y - center.Y)));
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", area.Corner.X + rectangleShape.Width - center.X, -(area.Corner.Y + rectangleShape.Height - center.Y)));
+                            handles.Add(string.Format(customCulture, "[{0},{1}]", area.Corner.X - center.X, -(area.Corner.Y + rectangleShape.Height - center.Y)));
+                            break;
+                        default:
+                            center = area.Center;
+                            foreach (Vector2 point in area.Points)
+                            {
+                                handles.Add(string.Format(customCulture, "[{0},{1}]", point.X - center.X, -(point.Y - center.Y)));
+                            }
+                            break;
+                    }
+
+                    string metaData = area.MetaData;
+                    AreaBehavior behaviour = area.Behavior;
+
+                    if (behaviour == AreaBehavior.Button)
+                    {
+                        //Check if we have some internal function
+                        if (metaData.Contains(Area.FUNCTIONTAG))
+                        {
+                            string arg = "";
+                            string paramList = "";
+
+                            while (metaData.Contains(Area.FUNCTIONTAG + "SelectGroup("))
+                            {
+                                behaviour = AreaBehavior.SelectOnly;
+
+                                arg = GetArgument(metaData, Area.FUNCTIONTAG + "SelectGroup");
+                                //SelectGroup(arg);
+                                AreaGroup areaG = FindGroup(arg);
+                                if (areaG == null)
+                                {
+                                    List<AreaMapComponent> pages = GetSynopticPages();
+                                    foreach (AreaMapComponent page in pages)
+                                    {
+                                        areaG = page.FindGroup(arg);
+                                        if (areaG != null)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (areaG != null)
+                                {
+                                    List<string> areaNames = new List<string>();
+                                    foreach (Area areaFromG in areaG.Areas)
+                                    {
+                                        areaNames.Add(string.Format("u'{0}'", areaFromG.MetaData));
+                                    }
+                                    metaData = TypesHelper.Join(areaNames);
+                                }
+                                else
+                                {
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectGroup");
+                                }
+                                /*
+                                if (metaData.Contains(Area.FUNCTIONTAG + "ShowArea("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "ShowArea");
+                                    //ShowArea(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ShowArea");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "HideArea("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "HideArea");
+                                    //HideArea(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "HideArea");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ToggleArea("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "ToggleArea");
+                                    //ToggleGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ToggleArea");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ShowGroup("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "ShowGroup");
+                                    //ShowGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ShowGroup");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "HideGroup("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "HideGroup");
+                                    //HideGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "HideGroup");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ToggleGroup("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "ToggleGroup");
+                                    //ToggleGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ToggleGroup");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "FreezeGroup("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "FreezeGroup");
+                                    //FreezeGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "FreezeGroup");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "UnfreezeGroup("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "UnfreezeGroup");
+                                    //UnfreezeGroup(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "UnfreezeGroup");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "SelectArea("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "SelectArea");
+                                    //SelectArea(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectArea");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "SelectGroup("))
+                                {
+                                    behaviour = AreaBehavior.SelectOnly;
+
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "SelectGroup");
+                                    //SelectGroup(arg);
+                                    AreaGroup areaG = FindGroup(arg);
+                                    if (areaG == null)
+                                    {
+                                        List<AreaMapComponent> pages = GetSynopticPages();
+                                        foreach (AreaMapComponent page in pages)
+                                        {
+                                            areaG = page.FindGroup(arg);
+                                            if (areaG != null)
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (areaG != null)
+                                    {
+                                        List<string> areaNames = new List<string>();
+                                        foreach (Area areaFromG in areaG.Areas)
+                                        {
+                                            areaNames.Add(string.Format("u'{0}'", areaFromG.MetaData));
+                                        }
+                                        metaData = TypesHelper.Join(areaNames);
+                                    }
+                                    else
+                                    {
+                                        metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectGroup");
+                                    }
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "SelectAll("))
+                                {
+                                    //SelectAll();
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "SelectAll");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "DeselectAll("))
+                                {
+                                    //DeselectAll();
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "DeselectAll");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "RefreshSelection("))
+                                {
+                                    //OnFunctionCalled(this, new FunctionEventArgs("RefreshSelection", new object[0]));
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "RefreshSelection");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ResetAll("))
+                                {
+                                    //ResetAll();
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetAll");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ResetArea("))
+                                {
+                                    arg = GetArgument(metaData, Area.FUNCTIONTAG + "ResetArea");
+                                    //ResetArea(arg);
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetArea");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "ResetCurrent("))
+                                {
+                                    //ResetCurrent();
+                                    metaData = Remove(metaData, Area.FUNCTIONTAG + "ResetCurrent");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "GetSelectedParams()"))
+                                {
+                                    paramList = GetSelectedParams();
+                                    metaData = metaData.Replace(Area.FUNCTIONTAG + "GetSelectedParams()", "\"" + paramList + "\"");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "GetCurrentParams()"))
+                                {
+                                    paramList = GetCurrentParams();
+                                    metaData = metaData.Replace(Area.FUNCTIONTAG + "GetCurrentParams()", "\"" + paramList + "\"");
+                                }
+                                else if (metaData.Contains(Area.FUNCTIONTAG + "GetAllParams()"))
+                                {
+                                    paramList = GetAllParams();
+                                    metaData = metaData.Replace(Area.FUNCTIONTAG + "GetAllParams()", "\"" + paramList + "\"");
+                                }
+                                /*
+                                else
+                                {
+                                    metaData = metaData.Remove(metaData.IndexOf(Area.FUNCTIONTAG), 1);
+                                }
+                                */
+                            }
+                        }
+
+                        metaData = metaData.Replace("SelfModelName", "__NAMESPACE__");
+                    }
+                    else
+                    {
+                        metaData = string.Format("u'{0}'", metaData);
+                    }
+
+                    string action = (behaviour == AreaBehavior.Button ? scriptSkeleton : controlsSkeleton).Replace("$METADATA", metaData.Replace("\r\n", "\\n"));
+
+                    strItems.Add(string.Format(customCulture, "{{'color': ({0}, {1}, {2}, {3}), 'position': [{4}, {5}], 'handles': [{6}], {7}, 'text':'{8}', 'text_color':({9},{10},{11},{12}), 'text_size':{13}}}",
+                        (int)area.AreaColor.R, (int)area.AreaColor.G, (int)area.AreaColor.B, (int)(Math.Min(255.0, (double)area.AreaColor.A * alphaBoost)), area.Center.X - offset.X, -(area.Center.Y - offset.Y), TypesHelper.Join(handles), action,
+                        area.Text, area.TextColor.R, area.TextColor.G, area.TextColor.B, area.TextColor.A, area.TextFont.SizeInPoints / _scaling));
+                }
+
+                skeleton = skeleton.Replace("$TABNAME", inAreaMap.Name);
+                skeleton = skeleton.Replace("$POSTCHUNK", itemsPostChunk);
+                skeleton = skeleton.Replace("$ITEMS", TypesHelper.Join(strItems));
+
+                writer.Write(skeleton);
             }
             catch (Exception e) { status = e.Message; }
 
@@ -2465,6 +2828,11 @@ namespace TK.GeometryLib.AreaMapFramework
                 
                 AreaMap newMap = (AreaMap)ser.Deserialize(reader);
                 newMap.Path = inPath;
+
+                //if (newMap.Groups.Count == 0)
+                //{
+                //newMap.LoadGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
+                //}
                 newMap.ResetGroups();
                 _maps.Add(newMap);
                 newMap.InitializeComponents();
@@ -2483,10 +2851,6 @@ namespace TK.GeometryLib.AreaMapFramework
                     }
 
                     _currentIndex = 0;
-                    if (newMap.Groups.Count == 0)
-                    {
-                        newMap.LoadGroups(inPath.Replace(Path.GetFileName(inPath), "Groups.xml"));
-                    }
                 }
                 else
                 {
@@ -2505,10 +2869,10 @@ namespace TK.GeometryLib.AreaMapFramework
 
             return status;
         }
-        /*
+
         private void DumpGroups()
         {
-            foreach (AreaGroup group in _groups)
+            foreach (AreaGroup group in Groups)
             {
                 group.DumpAreas();
             }
@@ -2527,7 +2891,7 @@ namespace TK.GeometryLib.AreaMapFramework
                     XmlSerializer ser = new XmlSerializer(typeof(List<AreaGroup>));
 
                     reader = new StreamReader(inPath);
-                    _groups = (List<AreaGroup>)ser.Deserialize(reader);
+                    Groups = (List<AreaGroup>)ser.Deserialize(reader);
                     //ResetGroups();
                     
                 }
@@ -2547,7 +2911,7 @@ namespace TK.GeometryLib.AreaMapFramework
             try
             {
                 writer = new StreamWriter(inPath, false);
-                ser.Serialize(writer, _groups);
+                ser.Serialize(writer, Groups);
             }
             catch
             {
@@ -2561,7 +2925,6 @@ namespace TK.GeometryLib.AreaMapFramework
                 }
             }
         }
-        */
 
         private void RefreshAssociated()
         {
@@ -2698,12 +3061,51 @@ namespace TK.GeometryLib.AreaMapFramework
             Invalidate();
         }
 
+        public void MirrorY(Area area)
+        {
+            area.MirrorY();
+            Invalidate();
+        }
+
         public void Symmetrize(Area area)
         {
             bool isLeft = true;
             string[] sides = new string[] {"Left_", "Right_"};
             Color[] colors = new Color[] {Color.Red, Color.Blue};
             area.Mirror(Center);
+
+            //Find location
+            if (area.Name.Contains("Left_") || area.Name.Contains("L_"))
+            {
+                if (area.Name.Contains("L_"))
+                {
+                    sides = new string[] { "L_", "R_" };
+                }
+            }
+            else if (area.Name.Contains("Right_") || area.Name.Contains("R_"))
+            {
+                isLeft = false;
+                if (area.Name.Contains("R_"))
+                {
+                    sides = new string[] { "L_", "R_" };
+                }
+            }
+            else
+            {
+                return;
+            }
+
+            area.Name = area.Name.Replace(sides[isLeft ? 0 : 1], sides[isLeft ? 1 : 0]);
+            area.MetaData = area.MetaData.Replace(sides[isLeft ? 0 : 1], sides[isLeft ? 1 : 0]);
+            area.AreaColor = colors[isLeft ? 1 : 0];
+        }
+
+        public void SymmetrizeY(Area area)
+        {
+            bool isLeft = true;
+            string[] sides = new string[] { "Left_", "Right_" };
+            Color[] colors = new Color[] { Color.Red, Color.Blue };
+            area.MirrorY(Center);
 
             //Find location
             if (area.Name.Contains("Left_") || area.Name.Contains("L_"))
@@ -2757,6 +3159,7 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             _currentIndex = inIndex;
             SetPicture(CurrentAreaMap.ImagePath);
+            ApplyGroupValues();
         }
 
         #endregion
@@ -2765,6 +3168,13 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public AreaGroup FindGroup(string inName)
         {
+            string groupsNames = "";
+
+            foreach (AreaGroup group in Groups)
+            {
+                groupsNames += group.Name + ",";
+            }
+
             foreach (AreaGroup group in Groups)
             {
                 if (group.Name == inName)
@@ -2852,6 +3262,51 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             //Why ? it causes the window to go in front of others...need a real reason for this
             //Focus();
+        }
+
+        private Vector2 Project(CG_Vector3 cG_Vector3, Projections inProjection)
+        {
+            switch (inProjection)
+            {
+                case Projections.XZ:
+                    return new Vector2((float)cG_Vector3.X, (float)cG_Vector3.Z);
+
+                case Projections.YZ:
+                    return new Vector2((float)cG_Vector3.Z, (float)cG_Vector3.Y);
+            }
+
+            return new Vector2((float)cG_Vector3.X, (float)cG_Vector3.Y);
+        }
+
+        public Area AddOscarControl(string inName, RigElement inRigElement, ControllerInfos inControllerInfos, Projections inProjection)
+        {
+            Vector2[] basePoints = new Vector2[]{   new Vector2(-0.5f, -0.5f), new Vector2(0.5f, -0.5f),
+                                                    new Vector2(0.5f, 0.5f), new Vector2(-0.5f, 0.5f)};
+
+            Vector2.ScaleVectors(ref basePoints, (float)inRigElement.GetSize());
+
+            CG_Vector3 displayOffset = UnTransform(inRigElement.DisplayOffset.Pos, inRigElement.Trans.Rot);
+            CG_Vector3 displayScale = UnTransform(inRigElement.DisplayOffset.Scl, inRigElement.Trans.Rot);
+
+            Vector2 display = Project(displayOffset, inProjection);
+            Vector2 scale = Project(inRigElement.Trans.Pos, inProjection);
+            Vector2 translation = Project(inRigElement.Trans.Pos, inProjection);
+
+            translation += display;
+            Vector2.OffsetVectors(ref basePoints, translation);
+            Vector2.ScaleVectors(ref basePoints, scale);
+            
+            Area newArea = AddPolygon(basePoints);
+            newArea.Name = newArea.MetaData = inName;
+
+            newArea.AreaColor = ProjectsManager.Get().ProjectPrefs.GetColor(inRigElement);
+
+            return newArea;
+        }
+
+        private CG_Vector3 UnTransform(CG_Vector3 cG_Vector3, CG_Vector3 cG_Vector3_2)
+        {
+            return cG_Vector3;
         }
     }
 

@@ -170,7 +170,7 @@ namespace TK.GeometryLib
             {
                 localPos = point - inReference;
                 localPos *= inScaling;
-                if (localPos.Length < 2)
+                if (localPos.Length < 2 && localPos.Length > 0.001f)
                 {
                     localPos.Length = 2;
                 }
@@ -204,6 +204,20 @@ namespace TK.GeometryLib
             {
                 localX = inCenter.X - point.X;
                 points.Add(new Vector2(inCenter.X + localX, point.Y));
+            }
+
+            _points = points;
+        }
+
+        public override void MirrorY(Vector2 inCenter)
+        {
+            float localY;
+
+            List<Vector2> points = new List<Vector2>();
+            foreach (Vector2 point in _points)
+            {
+                localY = inCenter.Y - point.Y;
+                points.Add(new Vector2(point.X, inCenter.Y + localY));
             }
 
             _points = points;
