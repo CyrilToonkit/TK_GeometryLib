@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AreaMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>NewArea</Name>
+  <ImagePath>..\KeyingPanel.jpg</ImagePath>
+  <Path>Z:\ToonKit\RnD\Src\TK_GeometryLib\SynopticView\Resources\CommonPanel.xml</Path>
+  <Index>0</Index>
+  <Areas>
+    <Area>
+      <RealType>Circle</RealType>
+      <Name>XYSlider</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <Type>Circle</Type>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>25</X>
+          <Y>288.172058</Y>
+        </Center>
+        <Radius>25</Radius>
+      </Shape>
+      <Behavior>SelectAndMove</Behavior>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <RefCenter>
+        <X>25</X>
+        <Y>288.172058</Y>
+      </RefCenter>
+      <ImgPath>Z:\ToonKit\Visuels\Synoptic\Switch.png</ImgPath>
+      <ImgPosition>
+        <X>10</X>
+        <Y>10</Y>
+      </ImgPosition>
+    </Area>
+  </Areas>
+  <AssociatedPaths />
+</AreaMap>

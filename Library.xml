@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AreaMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Library</Name>
+  <ImagePath />
+  <Path>Z:\ToonKit\RnD\Src\GeometryLib\SynopticView\bin\Release\Resources\Library.xml</Path>
+  <Index>0</Index>
+  <Areas>
+    <Area>
+      <Name>Switch</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>25</X>
+          <Y>25</Y>
+        </Center>
+        <Radius>25</Radius>
+      </Shape>
+      <Behavior>SelectAndMove</Behavior>
+      <MinX>-10</MinX>
+      <MaxX>10</MaxX>
+      <MinY>-10</MinY>
+      <MaxY>10</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:255:255</XmlColor>
+      <RefCenter>
+        <X>25</X>
+        <Y>25</Y>
+      </RefCenter>
+      <ImgPath>Z:\ToonKit\Visuels\Synoptic\Switch.png</ImgPath>
+      <ImgPosition>
+        <X>10</X>
+        <Y>10</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Flat Rectangle</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>71.80908</X>
+          <Y>71.80908</Y>
+        </Center>
+        <Width>143.618164</Width>
+        <Height>14.12793</Height>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:255:128</XmlColor>
+      <RefCenter>
+        <X>71.80908</X>
+        <Y>71.80908</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Tall Rectangle</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>73.50223</X>
+          <Y>73.50223</Y>
+        </Center>
+        <Width>57.80249</Width>
+        <Height>147.00444</Height>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:0:0:192</XmlColor>
+      <RefCenter>
+        <X>73.50223</X>
+        <Y>73.50223</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Simple Circle</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>33.2724457</X>
+          <Y>33.2724457</Y>
+        </Center>
+        <Radius>33.2724457</Radius>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:128:255:128</XmlColor>
+      <RefCenter>
+        <X>33.2724457</X>
+        <Y>33.2724457</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>4 Sided Polygon</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Polygon</RealType>
+      <Type>Polygon</Type>
+      <Shape xsi:type="Polygon2">
+        <Center>
+          <X>50.89324</X>
+          <Y>50.89324</Y>
+        </Center>
+        <Points>
+          <Vector2>
+            <X>0.739814758</X>
+            <Y>40.9666443</Y>
+          </Vector2>
+          <Vector2>
+            <X>61.2875137</X>
+            <Y>100.055313</Y>
+          </Vector2>
+          <Vector2>
+            <X>101.772469</X>
+            <Y>62.55101</Y>
+          </Vector2>
+          <Vector2>
+            <X>39.77317</X>
+            <Y>0</Y>
+          </Vector2>
+        </Points>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:0:0</XmlColor>
+      <RefCenter>
+        <X>50.89324</X>
+        <Y>50.89324</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Select&amp;Move</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Circle</RealType>
+      <Type>Circle</Type>
+      <Shape xsi:type="Circle">
+        <Center>
+          <X>16.5000019</X>
+          <Y>16.5000019</Y>
+        </Center>
+        <Radius>16.5</Radius>
+      </Shape>
+      <Behavior>SelectAndMove</Behavior>
+      <MinX>-20</MinX>
+      <MaxX>20</MaxX>
+      <MinY>-20</MinY>
+      <MaxY>20</MaxY>
+      <XMultiply>0.025</XMultiply>
+      <YMultiply>0.025</YMultiply>
+      <XParam>Left_Eyebrow_In.kine.local.posx</XParam>
+      <YParam>Left_Eyebrow_In.kine.local.posy</YParam>
+      <XmlColor>ARGBColor:60:255:0:0</XmlColor>
+      <RefCenter>
+        <X>16.5000019</X>
+        <Y>16.5000019</Y>
+      </RefCenter>
+      <ImgPath>Z:\ToonKit\Visuels\Synoptic\Cross_Arrow.png</ImgPath>
+      <ImgPosition>
+        <X>2</X>
+        <Y>2</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Arrow 7 sided</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Polygon</RealType>
+      <Type>Polygon</Type>
+      <Shape xsi:type="Polygon2">
+        <Center>
+          <X>37.37639</X>
+          <Y>37.37639</Y>
+        </Center>
+        <Points>
+          <Vector2>
+            <X>0</X>
+            <Y>23.7747955</Y>
+          </Vector2>
+          <Vector2>
+            <X>44.3157272</X>
+            <Y>23.7747955</Y>
+          </Vector2>
+          <Vector2>
+            <X>44.3157272</X>
+            <Y>12.9392014</Y>
+          </Vector2>
+          <Vector2>
+            <X>77.43244</X>
+            <Y>35.06702</Y>
+          </Vector2>
+          <Vector2>
+            <X>44.3157272</X>
+            <Y>56.2816277</Y>
+          </Vector2>
+          <Vector2>
+            <X>44.3157272</X>
+            <Y>56.2816277</Y>
+          </Vector2>
+          <Vector2>
+            <X>44.3157272</X>
+            <Y>45.44601</Y>
+          </Vector2>
+          <Vector2>
+            <X>0</X>
+            <Y>45.44601</Y>
+          </Vector2>
+        </Points>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:255:0</XmlColor>
+      <RefCenter>
+        <X>37.37639</X>
+        <Y>37.37639</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>10 sided shape</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Polygon</RealType>
+      <Type>Polygon</Type>
+      <Shape xsi:type="Polygon2">
+        <Center>
+          <X>49.4499435</X>
+          <Y>49.4499435</Y>
+        </Center>
+        <Points>
+          <Vector2>
+            <X>30.2293587</X>
+            <Y>46.0802574</Y>
+          </Vector2>
+          <Vector2>
+            <X>48.5502548</X>
+            <Y>34.4078064</Y>
+          </Vector2>
+          <Vector2>
+            <X>68.28064</X>
+            <Y>46.46604</Y>
+          </Vector2>
+          <Vector2>
+            <X>100.005844</X>
+            <Y>35.22106</Y>
+          </Vector2>
+          <Vector2>
+            <X>100.06456</X>
+            <Y>60.5799942</Y>
+          </Vector2>
+          <Vector2>
+            <X>67.84865</X>
+            <Y>54.7203</Y>
+          </Vector2>
+          <Vector2>
+            <X>48.94975</X>
+            <Y>64.40747</Y>
+          </Vector2>
+          <Vector2>
+            <X>30.5505066</X>
+            <Y>54.1063461</Y>
+          </Vector2>
+          <Vector2>
+            <X>0.01990138</X>
+            <Y>63.05272</Y>
+          </Vector2>
+          <Vector2>
+            <X>-8.64267349E-07</X>
+            <Y>35.4574432</Y>
+          </Vector2>
+        </Points>
+      </Shape>
+      <Behavior>SelectOnly</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:255:255:0</XmlColor>
+      <RefCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+    <Area>
+      <Name>Button rectangle</Name>
+      <MetaData />
+      <Description />
+      <IsActive>true</IsActive>
+      <IsVisible>true</IsVisible>
+      <RealType>Rectangle</RealType>
+      <Type>Rectangle</Type>
+      <Shape xsi:type="Rectangle">
+        <Center>
+          <X>36.5353127</X>
+          <Y>36.5353127</Y>
+        </Center>
+        <Width>73.0706253</Width>
+        <Height>38.31135</Height>
+      </Shape>
+      <Behavior>Button</Behavior>
+      <MinX>0</MinX>
+      <MaxX>0</MaxX>
+      <MinY>0</MinY>
+      <MaxY>0</MaxY>
+      <XMultiply>1</XMultiply>
+      <YMultiply>1</YMultiply>
+      <XParam />
+      <YParam />
+      <XmlColor>ARGBColor:60:224:224:224</XmlColor>
+      <RefCenter>
+        <X>0</X>
+        <Y>0</Y>
+      </RefCenter>
+      <ImgPath />
+      <ImgPosition>
+        <X>0</X>
+        <Y>0</Y>
+      </ImgPosition>
+    </Area>
+  </Areas>
+  <AssociatedPaths />
+</AreaMap>
