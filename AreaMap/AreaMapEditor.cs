@@ -9,8 +9,8 @@ using System.Windows.Forms;
 using TK.GeometryLib;
 using System.IO;
 using TK.BaseLib;
-using TK.NodalEditor;
 using TK_OSCARLib;
+using TK.NodalEditor;
 
 namespace TK.GeometryLib.AreaMapFramework
 {

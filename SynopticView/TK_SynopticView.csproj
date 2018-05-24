@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="TK_BaseLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_BaseLib\bin\Release\TK_BaseLib.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_BaseLib.dll</HintPath>
     </Reference>
     <Reference Include="TK_GraphComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_GraphComponents\bin\Release\TK_GraphComponents.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_GraphComponents.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

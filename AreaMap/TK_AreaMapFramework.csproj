@@ -41,19 +41,19 @@
     <Reference Include="System.Xml" />
     <Reference Include="TK_BaseLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_BaseLib\bin\Release\TK_BaseLib.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_BaseLib.dll</HintPath>
     </Reference>
     <Reference Include="TK_GraphComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_GraphComponents\bin\Release\TK_GraphComponents.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_GraphComponents.dll</HintPath>
     </Reference>
     <Reference Include="TK_NodalEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_OSCAR\Out\Release\TK_NodalEditor.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_NodalEditor.dll</HintPath>
     </Reference>
     <Reference Include="TK_OSCARLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TK_OSCAR\Out\Release\TK_OSCARLib.dll</HintPath>
+      <HintPath>..\..\..\Oscar\build\OscarEditor\release\TK_OSCARLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -142,12 +142,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeometryLib\TK_GeometryLib.csproj">
-      <Project>{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}</Project>
-      <Name>TK_GeometryLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,6 +156,12 @@
   <ItemGroup>
     <None Include="Resources\no-image.png" />
     <None Include="Resources\skeleton.pkr" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeometryLib\TK_GeometryLib.csproj">
+      <Project>{F23566DB-6DBF-4EDC-BBA1-688CD660CBCB}</Project>
+      <Name>TK_GeometryLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
