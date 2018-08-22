@@ -61,15 +61,20 @@
             this.transformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.rerange01To0515ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
+            this.bringToFrontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendToBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSelectionToLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.collapsibleGroup3 = new TK.GraphComponents.CollapsibleGroup();
+            this.libraryUCtrl1 = new TK.GeometryLib.AreaMapFramework.Library.LibraryUCtrl();
             this.collapsibleGroup1 = new TK.GraphComponents.CollapsibleGroup();
             this.collapsibleGroup2 = new TK.GraphComponents.CollapsibleGroup();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -91,24 +96,19 @@
             this.shapeMirrorBT = new System.Windows.Forms.Button();
             this.shapeSymBT = new System.Windows.Forms.Button();
             this.shapeMirrorYBT = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.centerYNUD = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.centerXNUD = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.removeTabBT = new System.Windows.Forms.Button();
             this.tabNameTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
-            this.bringToFrontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendToBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.centerXNUD = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.centerYNUD = new System.Windows.Forms.NumericUpDown();
-            this.showCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areaMapControl1 = new TK.GeometryLib.AreaMapFramework.AreaMapControl();
-            this.libraryUCtrl1 = new TK.GeometryLib.AreaMapFramework.Library.LibraryUCtrl();
             this.menuStrip1.SuspendLayout();
             this.collapsibleGroup3.SuspendLayout();
             this.collapsibleGroup1.SuspendLayout();
@@ -119,11 +119,11 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.collapsibleGroup4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -357,6 +357,25 @@
             this.rerange01To0515ToolStripMenuItem.Text = "Re-range 0->1 To -0.5->1.5";
             this.rerange01To0515ToolStripMenuItem.Click += new System.EventHandler(this.rerange01To0515ToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(253, 6);
+            // 
+            // bringToFrontToolStripMenuItem
+            // 
+            this.bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
+            this.bringToFrontToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.bringToFrontToolStripMenuItem.Text = "Bring to front";
+            this.bringToFrontToolStripMenuItem.Click += new System.EventHandler(this.bringToFrontToolStripMenuItem_Click);
+            // 
+            // sendToBackToolStripMenuItem
+            // 
+            this.sendToBackToolStripMenuItem.Name = "sendToBackToolStripMenuItem";
+            this.sendToBackToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.sendToBackToolStripMenuItem.Text = "Send to back";
+            this.sendToBackToolStripMenuItem.Click += new System.EventHandler(this.sendToBackToolStripMenuItem_Click);
+            // 
             // displayToolStripMenuItem
             // 
             this.displayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -382,6 +401,14 @@
             this.gridOnTopToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.gridOnTopToolStripMenuItem.Text = "Grid On Top";
             this.gridOnTopToolStripMenuItem.CheckedChanged += new System.EventHandler(this.gridOnTopToolStripMenuItem_CheckedChanged);
+            // 
+            // showCenterToolStripMenuItem
+            // 
+            this.showCenterToolStripMenuItem.CheckOnClick = true;
+            this.showCenterToolStripMenuItem.Name = "showCenterToolStripMenuItem";
+            this.showCenterToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.showCenterToolStripMenuItem.Text = "Show center";
+            this.showCenterToolStripMenuItem.CheckedChanged += new System.EventHandler(this.showCenterToolStripMenuItem_CheckedChanged);
             // 
             // libraryToolStripMenuItem
             // 
@@ -433,10 +460,19 @@
             this.collapsibleGroup3.Name = "collapsibleGroup3";
             this.collapsibleGroup3.OpenedBaseHeight = 150;
             this.collapsibleGroup3.OpenedBaseWidth = 100;
-            this.collapsibleGroup3.Size = new System.Drawing.Size(61, 480);
+            this.collapsibleGroup3.Size = new System.Drawing.Size(62, 480);
             this.collapsibleGroup3.TabIndex = 2;
             this.collapsibleGroup3.TabStop = false;
             this.collapsibleGroup3.Text = "Library";
+            // 
+            // libraryUCtrl1
+            // 
+            this.libraryUCtrl1.AreaMapComp = null;
+            this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
+            this.libraryUCtrl1.Name = "libraryUCtrl1";
+            this.libraryUCtrl1.Size = new System.Drawing.Size(56, 458);
+            this.libraryUCtrl1.TabIndex = 1;
             // 
             // collapsibleGroup1
             // 
@@ -454,11 +490,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.All;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(417, 24);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(416, 24);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 150;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(313, 480);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(314, 480);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Edit";
@@ -473,11 +509,11 @@
             this.collapsibleGroup2.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup2.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 203);
+            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 204);
             this.collapsibleGroup2.Name = "collapsibleGroup2";
             this.collapsibleGroup2.OpenedBaseHeight = 179;
             this.collapsibleGroup2.OpenedBaseWidth = 200;
-            this.collapsibleGroup2.Size = new System.Drawing.Size(307, 64);
+            this.collapsibleGroup2.Size = new System.Drawing.Size(308, 61);
             this.collapsibleGroup2.TabIndex = 1;
             this.collapsibleGroup2.TabStop = false;
             this.collapsibleGroup2.Text = "Properties";
@@ -495,7 +531,7 @@
             this.propertyGrid1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.propertyGrid1.Location = new System.Drawing.Point(3, 19);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(301, 42);
+            this.propertyGrid1.Size = new System.Drawing.Size(302, 39);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.ViewBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -511,11 +547,11 @@
             this.collapsibleGroup6.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup6.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 267);
+            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 265);
             this.collapsibleGroup6.Name = "collapsibleGroup6";
             this.collapsibleGroup6.OpenedBaseHeight = 56;
             this.collapsibleGroup6.OpenedBaseWidth = 250;
-            this.collapsibleGroup6.Size = new System.Drawing.Size(307, 68);
+            this.collapsibleGroup6.Size = new System.Drawing.Size(308, 69);
             this.collapsibleGroup6.TabIndex = 9;
             this.collapsibleGroup6.TabStop = false;
             this.collapsibleGroup6.Text = "MetaData";
@@ -529,7 +565,7 @@
             this.metaDataTB.Multiline = true;
             this.metaDataTB.Name = "metaDataTB";
             this.metaDataTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.metaDataTB.Size = new System.Drawing.Size(301, 46);
+            this.metaDataTB.Size = new System.Drawing.Size(302, 47);
             this.metaDataTB.TabIndex = 1;
             this.metaDataTB.WordWrap = false;
             this.metaDataTB.TextChanged += new System.EventHandler(this.metaDataTB_TextChanged);
@@ -545,11 +581,11 @@
             this.collapsibleGroup5.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup5.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 335);
+            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 334);
             this.collapsibleGroup5.Name = "collapsibleGroup5";
             this.collapsibleGroup5.OpenedBaseHeight = 100;
             this.collapsibleGroup5.OpenedBaseWidth = 200;
-            this.collapsibleGroup5.Size = new System.Drawing.Size(307, 142);
+            this.collapsibleGroup5.Size = new System.Drawing.Size(308, 143);
             this.collapsibleGroup5.TabIndex = 2;
             this.collapsibleGroup5.TabStop = false;
             this.collapsibleGroup5.Text = "Groups";
@@ -568,12 +604,12 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupsGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.groupsGridView.Size = new System.Drawing.Size(301, 93);
+            this.groupsGridView.Size = new System.Drawing.Size(302, 94);
             this.groupsGridView.TabIndex = 1;
+            this.groupsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellContentClick);
             this.groupsGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellValueChanged);
             this.groupsGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.groupsGridView_RowHeaderMouseClick);
             this.groupsGridView.SelectionChanged += new System.EventHandler(this.groupsGridView_SelectionChanged);
-            this.groupsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellContentClick);
             // 
             // tableLayoutPanel3
             // 
@@ -588,11 +624,11 @@
             this.tableLayoutPanel3.Controls.Add(this.groupAddObjsBT, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveBT, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 112);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 113);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(301, 27);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(302, 27);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupRemoveShapesBT
@@ -604,7 +640,7 @@
             this.groupRemoveShapesBT.Location = new System.Drawing.Point(201, 1);
             this.groupRemoveShapesBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupRemoveShapesBT.Name = "groupRemoveShapesBT";
-            this.groupRemoveShapesBT.Size = new System.Drawing.Size(99, 25);
+            this.groupRemoveShapesBT.Size = new System.Drawing.Size(100, 25);
             this.groupRemoveShapesBT.TabIndex = 3;
             this.groupRemoveShapesBT.Text = "- Shapes";
             this.groupRemoveShapesBT.UseVisualStyleBackColor = false;
@@ -669,7 +705,7 @@
             this.collapsibleGroup4.Name = "collapsibleGroup4";
             this.collapsibleGroup4.OpenedBaseHeight = 150;
             this.collapsibleGroup4.OpenedBaseWidth = 200;
-            this.collapsibleGroup4.Size = new System.Drawing.Size(307, 130);
+            this.collapsibleGroup4.Size = new System.Drawing.Size(308, 131);
             this.collapsibleGroup4.TabIndex = 7;
             this.collapsibleGroup4.TabStop = false;
             this.collapsibleGroup4.Text = "Areas";
@@ -685,7 +721,7 @@
             this.listBox1.Location = new System.Drawing.Point(3, 19);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(301, 79);
+            this.listBox1.Size = new System.Drawing.Size(302, 82);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -697,7 +733,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel2.Controls.Add(this.shapeSymYBT, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeDuplicateBT, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeRemoveBT, 5, 0);
@@ -705,11 +741,11 @@
             this.tableLayoutPanel2.Controls.Add(this.shapeSymBT, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeMirrorYBT, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 100);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 101);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(301, 27);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(302, 27);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // shapeSymYBT
@@ -751,7 +787,7 @@
             this.shapeRemoveBT.Location = new System.Drawing.Point(231, 1);
             this.shapeRemoveBT.Margin = new System.Windows.Forms.Padding(1);
             this.shapeRemoveBT.Name = "shapeRemoveBT";
-            this.shapeRemoveBT.Size = new System.Drawing.Size(69, 25);
+            this.shapeRemoveBT.Size = new System.Drawing.Size(70, 25);
             this.shapeRemoveBT.TabIndex = 0;
             this.shapeRemoveBT.Text = "X";
             this.shapeRemoveBT.UseVisualStyleBackColor = false;
@@ -802,6 +838,85 @@
             this.shapeMirrorYBT.UseVisualStyleBackColor = false;
             this.shapeMirrorYBT.Click += new System.EventHandler(this.shapeMirrorYBT_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 4;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.centerYNUD, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.centerXNUD, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 46);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(308, 27);
+            this.tableLayoutPanel5.TabIndex = 10;
+            // 
+            // centerYNUD
+            // 
+            this.centerYNUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerYNUD.Location = new System.Drawing.Point(232, 3);
+            this.centerYNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.centerYNUD.Name = "centerYNUD";
+            this.centerYNUD.Size = new System.Drawing.Size(73, 23);
+            this.centerYNUD.TabIndex = 6;
+            this.centerYNUD.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.centerYNUD.ValueChanged += new System.EventHandler(this.centerYNUD_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(157, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 27);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "CenterY";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 27);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "CenterX";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // centerXNUD
+            // 
+            this.centerXNUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerXNUD.Location = new System.Drawing.Point(78, 3);
+            this.centerXNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.centerXNUD.Name = "centerXNUD";
+            this.centerXNUD.Size = new System.Drawing.Size(73, 23);
+            this.centerXNUD.TabIndex = 4;
+            this.centerXNUD.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.centerXNUD.ValueChanged += new System.EventHandler(this.centerXNUD_ValueChanged);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -817,7 +932,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(307, 27);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(308, 27);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // removeTabBT
@@ -826,7 +941,7 @@
             this.removeTabBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeTabBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeTabBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.removeTabBT.Location = new System.Drawing.Point(278, 1);
+            this.removeTabBT.Location = new System.Drawing.Point(279, 1);
             this.removeTabBT.Margin = new System.Windows.Forms.Padding(1);
             this.removeTabBT.Name = "removeTabBT";
             this.removeTabBT.Size = new System.Drawing.Size(28, 25);
@@ -837,15 +952,15 @@
             // 
             // tabNameTB
             // 
-            this.tabNameTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabNameTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabNameTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.tabNameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tabNameTB.Location = new System.Drawing.Point(77, 2);
             this.tabNameTB.Margin = new System.Windows.Forms.Padding(2);
             this.tabNameTB.Name = "tabNameTB";
-            this.tabNameTB.Size = new System.Drawing.Size(198, 23);
+            this.tabNameTB.Size = new System.Drawing.Size(199, 23);
             this.tabNameTB.TabIndex = 4;
             this.tabNameTB.TextChanged += new System.EventHandler(this.tabNameTB_TextChanged);
             // 
@@ -859,25 +974,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Tab name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripMenuItem11
-            // 
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(253, 6);
-            // 
-            // bringToFrontToolStripMenuItem
-            // 
-            this.bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
-            this.bringToFrontToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.bringToFrontToolStripMenuItem.Text = "Bring to front";
-            this.bringToFrontToolStripMenuItem.Click += new System.EventHandler(this.bringToFrontToolStripMenuItem_Click);
-            // 
-            // sendToBackToolStripMenuItem
-            // 
-            this.sendToBackToolStripMenuItem.Name = "sendToBackToolStripMenuItem";
-            this.sendToBackToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.sendToBackToolStripMenuItem.Text = "Send to back";
-            this.sendToBackToolStripMenuItem.Click += new System.EventHandler(this.sendToBackToolStripMenuItem_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -909,8 +1005,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -920,93 +1016,6 @@
             this.textBox1.Size = new System.Drawing.Size(1, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.centerYNUD, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.centerXNUD, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 46);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(307, 27);
-            this.tableLayoutPanel5.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 27);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "CenterX";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // centerXNUD
-            // 
-            this.centerXNUD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centerXNUD.Location = new System.Drawing.Point(78, 3);
-            this.centerXNUD.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.centerXNUD.Name = "centerXNUD";
-            this.centerXNUD.Size = new System.Drawing.Size(72, 23);
-            this.centerXNUD.TabIndex = 4;
-            this.centerXNUD.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.centerXNUD.ValueChanged += new System.EventHandler(this.centerXNUD_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(156, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 27);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "CenterY";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // centerYNUD
-            // 
-            this.centerYNUD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centerYNUD.Location = new System.Drawing.Point(231, 3);
-            this.centerYNUD.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.centerYNUD.Name = "centerYNUD";
-            this.centerYNUD.Size = new System.Drawing.Size(73, 23);
-            this.centerYNUD.TabIndex = 6;
-            this.centerYNUD.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.centerYNUD.ValueChanged += new System.EventHandler(this.centerYNUD_ValueChanged);
-            // 
-            // showCenterToolStripMenuItem
-            // 
-            this.showCenterToolStripMenuItem.CheckOnClick = true;
-            this.showCenterToolStripMenuItem.Name = "showCenterToolStripMenuItem";
-            this.showCenterToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.showCenterToolStripMenuItem.Text = "Show center";
-            this.showCenterToolStripMenuItem.CheckedChanged += new System.EventHandler(this.showCenterToolStripMenuItem_CheckedChanged);
-            // 
             // areaMapControl1
             // 
             this.areaMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1014,21 +1023,12 @@
             synopticDCCHandler1.ModelName = "No model !";
             this.areaMapControl1.Handler = synopticDCCHandler1;
             this.areaMapControl1.IsDocked = true;
-            this.areaMapControl1.Location = new System.Drawing.Point(61, 24);
+            this.areaMapControl1.Location = new System.Drawing.Point(62, 24);
             this.areaMapControl1.Name = "areaMapControl1";
             this.areaMapControl1.OptionsShowing = true;
             this.areaMapControl1.ShowGrid = false;
-            this.areaMapControl1.Size = new System.Drawing.Size(356, 480);
+            this.areaMapControl1.Size = new System.Drawing.Size(354, 480);
             this.areaMapControl1.TabIndex = 3;
-            // 
-            // libraryUCtrl1
-            // 
-            this.libraryUCtrl1.AreaMapComp = null;
-            this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
-            this.libraryUCtrl1.Name = "libraryUCtrl1";
-            this.libraryUCtrl1.Size = new System.Drawing.Size(55, 458);
-            this.libraryUCtrl1.TabIndex = 1;
             // 
             // AreaMapEditor
             // 
@@ -1053,13 +1053,13 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.collapsibleGroup4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.centerXNUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.centerYNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
