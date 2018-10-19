@@ -14,11 +14,11 @@
     <Setting Name="BackDarkColour" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">80, 80, 80</Value>
     </Setting>
-    <Setting Name="LittleFont" Type="System.Drawing.Font" Scope="Application">
-      <Value Profile="(Default)">Segoe Condensed, 9pt</Value>
-    </Setting>
     <Setting Name="OscarPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Z:\Toonkit\RnD\Src\GitRepo\oscar\build\OscarEditor\release</Value>
+      <Value Profile="(Default)">C:\Users\cyrilg\Documents\Toonkit\MayaDev\Maya2018\Standalones\OSCAR</Value>
+    </Setting>
+    <Setting Name="LittleFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Microsoft Sans Serif, 9pt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

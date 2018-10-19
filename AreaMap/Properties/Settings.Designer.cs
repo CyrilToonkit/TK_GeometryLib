@@ -12,7 +12,7 @@ namespace TK.GeometryLib.AreaMapFramework.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -59,24 +59,24 @@ namespace TK.GeometryLib.AreaMapFramework.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Segoe Condensed, 9pt")]
-        public global::System.Drawing.Font LittleFont {
-            get {
-                return ((global::System.Drawing.Font)(this["LittleFont"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Z:\\Toonkit\\RnD\\Src\\GitRepo\\oscar\\build\\OscarEditor\\release")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\cyrilg\\Documents\\Toonkit\\MayaDev\\Maya2018\\Standalones\\OSCAR")]
         public string OscarPath {
             get {
                 return ((string)(this["OscarPath"]));
             }
             set {
                 this["OscarPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 9pt")]
+        public global::System.Drawing.Font LittleFont {
+            get {
+                return ((global::System.Drawing.Font)(this["LittleFont"]));
             }
         }
     }

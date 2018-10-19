@@ -16,7 +16,7 @@ namespace TK.GeometryLib.AreaMapFramework
 {
     public partial class AreaMapEditor : UserControl
     {
-        string applicationName = "SynopTiK Editor V1.6";
+        string applicationName = "SynopTiK Editor V1.7";
 
         Form addOscarForm = null;
         AddOscarControlsUCtrl editor = null;
@@ -307,19 +307,61 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public void RefreshListBox()
         {
-            ListBox.SelectedIndexCollection coll = listBox1.SelectedIndices;
+            RefreshListBox(true);
+        }
+
+        public void RefreshListBox(bool inUseIndices)
+        {
+            List<object> coll = new List<object>();
+
+            if (inUseIndices)
+            {
+                foreach (object obj in listBox1.SelectedIndices)
+                {
+                    coll.Add(obj);
+                }
+            }
+            else
+            {
+                foreach (object obj in listBox1.SelectedItems)
+                {
+                    coll.Add(obj);
+                }
+            }
 
             listBox1.DataSource = null;
             listBox1.Items.Clear();
-            listBox1.SelectedIndex = -1;
             if (AreaMapComponent.CurrentAreaMap != null)
             {
                 listBox1.DataSource = AreaMapComponent.CurrentAreaMap.Areas;
             }
 
-            foreach(int index in coll)
+            listBox1.ClearSelected();
+
+            if (inUseIndices)
             {
-                listBox1.SetSelected(index, true);
+                foreach (int index in coll)
+                {
+                    if (index < listBox1.Items.Count)
+                        listBox1.SetSelected(index, true);
+                }
+            }
+            else
+            {
+                foreach (object obj in coll)
+                {
+                    int index = 0;
+                    foreach (object obj2 in listBox1.Items)
+                    {
+                        if ((obj2 as Area).Name == (obj as Area).Name)
+                        {
+                            if(index < listBox1.Items.Count)
+                                listBox1.SetSelected(index, true);
+                            break;
+                        }
+                        index++;
+                    }
+                }
             }
         }
 
@@ -368,7 +410,7 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             AreaMapComponent.IsEditing = !AreaMapComponent.IsEditing;
             switchModeToolStripMenuItem.Text = AreaMapComponent.IsEditing ? "Switch to Control mode" : "Switch to Edit mode";
-            RefreshListBox();
+            RefreshListBox(false);
         }
 
         private void resetAllToolStripMenuItem_Click(object sender, EventArgs e)
