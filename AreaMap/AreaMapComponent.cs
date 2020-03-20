@@ -211,12 +211,12 @@ namespace TK.GeometryLib.AreaMapFramework
         bool _isTransforming = false;
         bool _isRotating = false;
         bool _isScaling = false;
-        Vector2 _dragPoint = new Vector2(-1,-1);
+        Vector2 _dragPoint = new Vector2(-1, -1);
         Area _dragged = null;
         Vector2 _selectPoint = new Vector2(-1, -1);
         SelectionModes _selectionMode = SelectionModes.Rectangle;
         GeometryLib.Rectangle _draggedSelection = new GeometryLib.Rectangle();
-        Polygon2 _tranform = new Polygon2(new Vector2(),new Vector2(),new Vector2(),new Vector2());
+        Polygon2 _tranform = new Polygon2(new Vector2(), new Vector2(), new Vector2(), new Vector2());
         List<Area> _tranforming = new List<Area>();
         Stroke2 _selectStroke = new Stroke2();
         List<AreaMap> _maps = new List<AreaMap>();
@@ -230,7 +230,7 @@ namespace TK.GeometryLib.AreaMapFramework
         List<Area> _selection = new List<Area>();
 
         List<Area> _unValidatedValues = new List<Area>();
-        Pen _boldPen = new Pen(Color.FromArgb(120,0,0,0), 3f);
+        Pen _boldPen = new Pen(Color.FromArgb(120, 0, 0, 0), 3f);
         Pen _selectPen = new Pen(Color.DodgerBlue, 1f);
         Brush _selectBrush = new SolidBrush(Color.FromArgb(50, Color.DodgerBlue));
 
@@ -239,8 +239,24 @@ namespace TK.GeometryLib.AreaMapFramework
         bool _gridOnTop = false;
         bool _showCenter = false;
 
-        int _centerX = 50;
-        int _centerY = 100;
+        int CenterX
+        {
+            get { return CurrentAreaMap != null ? (int)CurrentAreaMap.Center.X : 0; }
+            set
+            {
+                if (CurrentAreaMap != null)
+                    CurrentAreaMap.Center = new Vector2((float)value, CurrentAreaMap.Center.Y);
+            }
+        }
+        int CenterY
+        {
+            get { return CurrentAreaMap != null ? (int)CurrentAreaMap.Center.Y : 0; }
+            set
+            {
+                if (CurrentAreaMap != null)
+                    CurrentAreaMap.Center = new Vector2(CurrentAreaMap.Center.X, (float)value);
+            }
+        }
 
         DialogResult rslt = DialogResult.Ignore;
 
@@ -2144,11 +2160,11 @@ namespace TK.GeometryLib.AreaMapFramework
 
         public Vector2 Center
         {
-            get { return new Vector2((float)_centerX, (float)_centerY); }
+            get { return new Vector2((float)CenterX, (float)CenterY); }
             set
             {
-                _centerX = (int)value.X;
-                _centerY = (int)value.Y;
+                CenterX = (int)value.X;
+                CenterY = (int)value.Y;
             }
         }
 
@@ -2227,8 +2243,8 @@ namespace TK.GeometryLib.AreaMapFramework
             //Center
             if (_showCenter)
             {
-                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X + _centerX * _scaling, _offset.Y), new PointF(_offset.X + _centerX * _scaling, _dimensions.Height * _scaling + _offset.Y));
-                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X, _offset.Y + _centerY * _scaling), new PointF(_dimensions.Width * _scaling + _offset.X, _offset.Y + _centerY * _scaling));
+                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X + CenterX * _scaling, _offset.Y), new PointF(_offset.X + CenterX * _scaling, _dimensions.Height * _scaling + _offset.Y));
+                e.Graphics.DrawLine(_boldPen, new PointF(_offset.X, _offset.Y + CenterY * _scaling), new PointF(_dimensions.Width * _scaling + _offset.X, _offset.Y + CenterY * _scaling));
             }
         }
 
@@ -2257,9 +2273,6 @@ namespace TK.GeometryLib.AreaMapFramework
                 {
                     RefreshOffset();
                 }
-
-                _centerX = BackgroundImage.Size.Width / 2;
-                _centerY = BackgroundImage.Size.Height / 2;
             }
         }
 
@@ -3292,7 +3305,7 @@ namespace TK.GeometryLib.AreaMapFramework
             CG_Vector3 displayScale = UnTransform(inRigElement.DisplayOffset.Scl, inRigElement.Trans.Rot);
 
             Vector2 display = Project(displayOffset, inProjection);
-            Vector2 scale = Project(inRigElement.Trans.Pos, inProjection);
+            Vector2 scale = Project(displayScale, inProjection);
             Vector2 translation = Project(inRigElement.Trans.Pos, inProjection);
 
             translation += display;

@@ -36,9 +36,9 @@ namespace TK.GeometryLib.AreaMapFramework
 
         void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tabNameTB.Text = AreaMapComponent.CurrentAreaMap.Name;
-            ParentForm.Text = ApplicationName + " - " + AreaMapComponent.CurrentAreaMap.Path;
+            RefreshMetaData();
             RefreshListBox();
+            RefreshMetaData();
         }
 
         void areaMap1_MouseUp(object sender, MouseEventArgs e)
@@ -251,6 +251,7 @@ namespace TK.GeometryLib.AreaMapFramework
 
             RefreshListBox();
             RefreshGroups();
+            RefreshMetaData();
         }
 
         private void loadAsTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -391,6 +392,19 @@ namespace TK.GeometryLib.AreaMapFramework
 
                 propertyGrid1.SelectedObjects = objs;
             }
+        }
+
+        private void RefreshMetaData()
+        {
+            _muteEvents = true;
+
+            tabNameTB.Text = AreaMapComponent.CurrentAreaMap.Name;
+            ParentForm.Text = ApplicationName + " - " + AreaMapComponent.CurrentAreaMap.Path;
+
+            centerXNUD.Value = (decimal)AreaMapComponent.Center.X;
+            centerYNUD.Value = (decimal)AreaMapComponent.Center.Y;
+
+            _muteEvents = false;
         }
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
@@ -767,12 +781,18 @@ namespace TK.GeometryLib.AreaMapFramework
                     addOscarForm.Controls.Add(editor);
                     editor.Dock = DockStyle.Fill;
                     editor.AddBT.Click += new EventHandler(AddBT_Click);
+                    addOscarForm.FormClosed += AddOscarForm_FormClosed;
                 }
 
                 editor.Init(AreaMapComponent, genData);
 
                 addOscarForm.Show();
             }
+        }
+
+        private void AddOscarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            addOscarForm = null;
         }
 
         void AddBT_Click(object sender, EventArgs e)
@@ -823,7 +843,8 @@ namespace TK.GeometryLib.AreaMapFramework
 
             foreach (Area area in areas)
             {
-                area.Center += new Vector2(-minX, -minY);
+                area.Center *= new Vector2(1.0f, -1.0f);
+                area.Center += new Vector2(-minX, maxY);
                 area.Scale(new Vector2(scale, scale), new Vector2(0f, 0f));
             }
 
@@ -1024,14 +1045,20 @@ namespace TK.GeometryLib.AreaMapFramework
 
         private void centerXNUD_ValueChanged(object sender, EventArgs e)
         {
-            AreaMapComponent.Center = new Vector2((float)centerXNUD.Value, AreaMapComponent.Center.Y);
-            AreaMapComponent.Invalidate();
+            if (!_muteEvents)
+            {
+                AreaMapComponent.Center = new Vector2((float)centerXNUD.Value, AreaMapComponent.Center.Y);
+                AreaMapComponent.Invalidate();
+            }
         }
 
         private void centerYNUD_ValueChanged(object sender, EventArgs e)
         {
-            AreaMapComponent.Center = new Vector2(AreaMapComponent.Center.X, (float)centerYNUD.Value);
-            AreaMapComponent.Invalidate();
+            if (!_muteEvents)
+            {
+                AreaMapComponent.Center = new Vector2(AreaMapComponent.Center.X, (float)centerYNUD.Value);
+                AreaMapComponent.Invalidate();
+            }
         }
     }
 }

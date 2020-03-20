@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            TK.GeometryLib.AreaMapFramework.SynopticDCCHandler synopticDCCHandler1 = new TK.GeometryLib.AreaMapFramework.SynopticDCCHandler();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            TK.GeometryLib.AreaMapFramework.SynopticDCCHandler synopticDCCHandler2 = new TK.GeometryLib.AreaMapFramework.SynopticDCCHandler();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -462,7 +462,7 @@
             this.collapsibleGroup3.Name = "collapsibleGroup3";
             this.collapsibleGroup3.OpenedBaseHeight = 150;
             this.collapsibleGroup3.OpenedBaseWidth = 100;
-            this.collapsibleGroup3.Size = new System.Drawing.Size(64, 480);
+            this.collapsibleGroup3.Size = new System.Drawing.Size(65, 480);
             this.collapsibleGroup3.TabIndex = 2;
             this.collapsibleGroup3.TabStop = false;
             this.collapsibleGroup3.Text = "Library";
@@ -473,7 +473,7 @@
             this.libraryUCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.libraryUCtrl1.Location = new System.Drawing.Point(3, 19);
             this.libraryUCtrl1.Name = "libraryUCtrl1";
-            this.libraryUCtrl1.Size = new System.Drawing.Size(58, 458);
+            this.libraryUCtrl1.Size = new System.Drawing.Size(59, 458);
             this.libraryUCtrl1.TabIndex = 1;
             // 
             // collapsibleGroup1
@@ -492,11 +492,11 @@
             this.collapsibleGroup1.DockingChanges = TK.GraphComponents.DockingPossibilities.All;
             this.collapsibleGroup1.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup1.Location = new System.Drawing.Point(414, 24);
+            this.collapsibleGroup1.Location = new System.Drawing.Point(413, 24);
             this.collapsibleGroup1.Name = "collapsibleGroup1";
             this.collapsibleGroup1.OpenedBaseHeight = 150;
             this.collapsibleGroup1.OpenedBaseWidth = 200;
-            this.collapsibleGroup1.Size = new System.Drawing.Size(316, 480);
+            this.collapsibleGroup1.Size = new System.Drawing.Size(317, 480);
             this.collapsibleGroup1.TabIndex = 0;
             this.collapsibleGroup1.TabStop = false;
             this.collapsibleGroup1.Text = "Edit";
@@ -511,11 +511,11 @@
             this.collapsibleGroup2.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup2.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 206);
+            this.collapsibleGroup2.Location = new System.Drawing.Point(3, 207);
             this.collapsibleGroup2.Name = "collapsibleGroup2";
             this.collapsibleGroup2.OpenedBaseHeight = 179;
             this.collapsibleGroup2.OpenedBaseWidth = 200;
-            this.collapsibleGroup2.Size = new System.Drawing.Size(310, 55);
+            this.collapsibleGroup2.Size = new System.Drawing.Size(311, 52);
             this.collapsibleGroup2.TabIndex = 1;
             this.collapsibleGroup2.TabStop = false;
             this.collapsibleGroup2.Text = "Properties";
@@ -533,7 +533,7 @@
             this.propertyGrid1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.propertyGrid1.Location = new System.Drawing.Point(3, 19);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(304, 33);
+            this.propertyGrid1.Size = new System.Drawing.Size(305, 30);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.ViewBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -549,11 +549,11 @@
             this.collapsibleGroup6.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup6.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 261);
+            this.collapsibleGroup6.Location = new System.Drawing.Point(3, 259);
             this.collapsibleGroup6.Name = "collapsibleGroup6";
             this.collapsibleGroup6.OpenedBaseHeight = 56;
             this.collapsibleGroup6.OpenedBaseWidth = 250;
-            this.collapsibleGroup6.Size = new System.Drawing.Size(310, 71);
+            this.collapsibleGroup6.Size = new System.Drawing.Size(311, 72);
             this.collapsibleGroup6.TabIndex = 9;
             this.collapsibleGroup6.TabStop = false;
             this.collapsibleGroup6.Text = "MetaData";
@@ -567,7 +567,7 @@
             this.metaDataTB.Multiline = true;
             this.metaDataTB.Name = "metaDataTB";
             this.metaDataTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.metaDataTB.Size = new System.Drawing.Size(304, 49);
+            this.metaDataTB.Size = new System.Drawing.Size(305, 50);
             this.metaDataTB.TabIndex = 1;
             this.metaDataTB.WordWrap = false;
             this.metaDataTB.TextChanged += new System.EventHandler(this.metaDataTB_TextChanged);
@@ -583,11 +583,11 @@
             this.collapsibleGroup5.DockingChanges = TK.GraphComponents.DockingPossibilities.None;
             this.collapsibleGroup5.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.collapsibleGroup5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 332);
+            this.collapsibleGroup5.Location = new System.Drawing.Point(3, 331);
             this.collapsibleGroup5.Name = "collapsibleGroup5";
             this.collapsibleGroup5.OpenedBaseHeight = 100;
             this.collapsibleGroup5.OpenedBaseWidth = 200;
-            this.collapsibleGroup5.Size = new System.Drawing.Size(310, 145);
+            this.collapsibleGroup5.Size = new System.Drawing.Size(311, 146);
             this.collapsibleGroup5.TabIndex = 2;
             this.collapsibleGroup5.TabStop = false;
             this.collapsibleGroup5.Text = "Groups";
@@ -603,10 +603,10 @@
             this.groupsGridView.Name = "groupsGridView";
             this.groupsGridView.RowHeadersWidth = 18;
             this.groupsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupsGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.groupsGridView.Size = new System.Drawing.Size(304, 96);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupsGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.groupsGridView.Size = new System.Drawing.Size(305, 97);
             this.groupsGridView.TabIndex = 1;
             this.groupsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellContentClick);
             this.groupsGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupsGridView_CellValueChanged);
@@ -620,17 +620,17 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveShapesBT, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddBT, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupAddObjsBT, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupRemoveBT, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 115);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 116);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(304, 27);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(305, 27);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupRemoveShapesBT
@@ -642,7 +642,7 @@
             this.groupRemoveShapesBT.Location = new System.Drawing.Point(201, 1);
             this.groupRemoveShapesBT.Margin = new System.Windows.Forms.Padding(1);
             this.groupRemoveShapesBT.Name = "groupRemoveShapesBT";
-            this.groupRemoveShapesBT.Size = new System.Drawing.Size(102, 25);
+            this.groupRemoveShapesBT.Size = new System.Drawing.Size(103, 25);
             this.groupRemoveShapesBT.TabIndex = 3;
             this.groupRemoveShapesBT.Text = "- Shapes";
             this.groupRemoveShapesBT.UseVisualStyleBackColor = false;
@@ -707,7 +707,7 @@
             this.collapsibleGroup4.Name = "collapsibleGroup4";
             this.collapsibleGroup4.OpenedBaseHeight = 150;
             this.collapsibleGroup4.OpenedBaseWidth = 200;
-            this.collapsibleGroup4.Size = new System.Drawing.Size(310, 133);
+            this.collapsibleGroup4.Size = new System.Drawing.Size(311, 134);
             this.collapsibleGroup4.TabIndex = 7;
             this.collapsibleGroup4.TabStop = false;
             this.collapsibleGroup4.Text = "Areas";
@@ -723,7 +723,7 @@
             this.listBox1.Location = new System.Drawing.Point(3, 19);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(304, 84);
+            this.listBox1.Size = new System.Drawing.Size(305, 85);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -735,7 +735,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel2.Controls.Add(this.shapeSymYBT, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeDuplicateBT, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeRemoveBT, 5, 0);
@@ -743,11 +743,11 @@
             this.tableLayoutPanel2.Controls.Add(this.shapeSymBT, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.shapeMirrorYBT, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 103);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 104);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(304, 27);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(305, 27);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // shapeSymYBT
@@ -789,7 +789,7 @@
             this.shapeRemoveBT.Location = new System.Drawing.Point(231, 1);
             this.shapeRemoveBT.Margin = new System.Windows.Forms.Padding(1);
             this.shapeRemoveBT.Name = "shapeRemoveBT";
-            this.shapeRemoveBT.Size = new System.Drawing.Size(72, 25);
+            this.shapeRemoveBT.Size = new System.Drawing.Size(73, 25);
             this.shapeRemoveBT.TabIndex = 0;
             this.shapeRemoveBT.Text = "X";
             this.shapeRemoveBT.UseVisualStyleBackColor = false;
@@ -856,7 +856,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(310, 27);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(311, 27);
             this.tableLayoutPanel5.TabIndex = 10;
             // 
             // centerYNUD
@@ -869,7 +869,7 @@
             0,
             0});
             this.centerYNUD.Name = "centerYNUD";
-            this.centerYNUD.Size = new System.Drawing.Size(74, 23);
+            this.centerYNUD.Size = new System.Drawing.Size(75, 23);
             this.centerYNUD.TabIndex = 6;
             this.centerYNUD.Value = new decimal(new int[] {
             100,
@@ -934,7 +934,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(310, 27);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(311, 27);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // removeTabBT
@@ -943,7 +943,7 @@
             this.removeTabBT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeTabBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeTabBT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.removeTabBT.Location = new System.Drawing.Point(281, 1);
+            this.removeTabBT.Location = new System.Drawing.Point(282, 1);
             this.removeTabBT.Margin = new System.Windows.Forms.Padding(1);
             this.removeTabBT.Name = "removeTabBT";
             this.removeTabBT.Size = new System.Drawing.Size(28, 25);
@@ -962,7 +962,7 @@
             this.tabNameTB.Location = new System.Drawing.Point(77, 2);
             this.tabNameTB.Margin = new System.Windows.Forms.Padding(2);
             this.tabNameTB.Name = "tabNameTB";
-            this.tabNameTB.Size = new System.Drawing.Size(201, 23);
+            this.tabNameTB.Size = new System.Drawing.Size(202, 23);
             this.tabNameTB.TabIndex = 4;
             this.tabNameTB.TextChanged += new System.EventHandler(this.tabNameTB_TextChanged);
             // 
@@ -1022,14 +1022,14 @@
             // 
             this.areaMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.areaMapControl1.GridOnTop = false;
-            synopticDCCHandler1.ModelName = "No model !";
-            this.areaMapControl1.Handler = synopticDCCHandler1;
+            synopticDCCHandler2.ModelName = "No model !";
+            this.areaMapControl1.Handler = synopticDCCHandler2;
             this.areaMapControl1.IsDocked = true;
-            this.areaMapControl1.Location = new System.Drawing.Point(64, 24);
+            this.areaMapControl1.Location = new System.Drawing.Point(65, 24);
             this.areaMapControl1.Name = "areaMapControl1";
             this.areaMapControl1.OptionsShowing = true;
             this.areaMapControl1.ShowGrid = false;
-            this.areaMapControl1.Size = new System.Drawing.Size(350, 480);
+            this.areaMapControl1.Size = new System.Drawing.Size(348, 480);
             this.areaMapControl1.TabIndex = 3;
             // 
             // AreaMapEditor

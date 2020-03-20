@@ -12,7 +12,7 @@ namespace TK.GeometryLib.AreaMapFramework.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -61,7 +61,8 @@ namespace TK.GeometryLib.AreaMapFramework.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\cyrilg\\Documents\\Toonkit\\MayaDev\\Maya2018\\Standalones\\OSCAR")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Utilisateurs\\Utilisateur\\Documents\\Toonkit\\RnD\\Toonkit_Modules\\Distrib_Toonkit" +
+            "_Module\\Distributions\\Toonkit_Module_2018_1_5_38\\Maya2018\\Standalones\\OSCAR")]
         public string OscarPath {
             get {
                 return ((string)(this["OscarPath"]));

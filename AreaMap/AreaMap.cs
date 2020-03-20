@@ -17,6 +17,7 @@ namespace TK.GeometryLib.AreaMapFramework
         int _index = 0;
         List<Area> _areas = new List<Area>();
         List<AreaGroup> _groups = new List<AreaGroup>();
+        Vector2 _center = new Vector2(50f, 100f);
 
         //Deprecated
         List<string> _associatedPaths = new List<string>();
@@ -55,6 +56,11 @@ namespace TK.GeometryLib.AreaMapFramework
         {
             get { return _associatedPaths; }
             set { _associatedPaths = value; }
+        }
+        public Vector2 Center
+        {
+            get { return _center; }
+            set { _center = value; }
         }
 
         internal void InitializeComponents()

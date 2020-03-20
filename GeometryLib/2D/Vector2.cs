@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Globalization;
+using System.Xml.Serialization;
 
 namespace TK.GeometryLib
 {
     //[Serializable()]
     [TypeConverterAttribute(typeof(TransVector2)),
-DescriptionAttribute("Expand to see Vector's X Y.")]
+    DescriptionAttribute("Expand to see Vector's X Y.")]
     public class Vector2 : ICloneable
     {
         public Vector2()
@@ -45,6 +43,7 @@ DescriptionAttribute("Expand to see Vector's X Y.")]
         }
 
         protected float _minimumLength = 0;
+        [XmlIgnore]
         public float MinimumLength
         {
             get { return _minimumLength; }
@@ -61,14 +60,18 @@ DescriptionAttribute("Expand to see Vector's X Y.")]
             get { return (X == 1 && Y == 1); }
         }
 
+        [XmlIgnore]
         public float Length
         {
             get { return (float)Math.Sqrt(mx * mx + my * my); }
             set
             {
-                float length = Length;
-                mx = Math.Max(_minimumLength, (value / length)) * mx;
-                my = Math.Max(_minimumLength, (value / length)) * my;
+                if (value > 0)
+                {
+                    float length = Length;
+                    mx = Math.Max(_minimumLength, (value / length)) * mx;
+                    my = Math.Max(_minimumLength, (value / length)) * my;
+                }
             }
         }
 

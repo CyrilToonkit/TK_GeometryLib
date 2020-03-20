@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Globalization;
+using System.Xml.Serialization;
 
 namespace TK.GeometryLib
 {
     [Serializable()]
     [TypeConverterAttribute(typeof(TransVector3)),
-DescriptionAttribute("Expand to see Vector's X Y Z.")]
+    DescriptionAttribute("Expand to see Vector's X Y Z.")]
     public class Vector3 : ICloneable
     {
         public Vector3()
@@ -54,6 +52,7 @@ DescriptionAttribute("Expand to see Vector's X Y Z.")]
             set { mz = value; }
         }
 
+        [XmlIgnore]
         public bool IsNull
         {
             get { return (X == 0 && Y == 0 && Z == 0); }
@@ -64,11 +63,13 @@ DescriptionAttribute("Expand to see Vector's X Y Z.")]
             get { return new Vector3(); }
         }
 
+        [XmlIgnore]
         public bool Identity
         {
             get { return (X == 1 && Y == 1 && Z == 1); }
         }
 
+        [XmlIgnore]
         public double Length
         {
             get { return Math.Sqrt(mx * mx + my * my + mz * mz); }

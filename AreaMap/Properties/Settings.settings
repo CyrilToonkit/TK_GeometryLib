@@ -15,7 +15,7 @@
       <Value Profile="(Default)">80, 80, 80</Value>
     </Setting>
     <Setting Name="OscarPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\cyrilg\Documents\Toonkit\MayaDev\Maya2018\Standalones\OSCAR</Value>
+      <Value Profile="(Default)">D:\Utilisateurs\Utilisateur\Documents\Toonkit\RnD\Toonkit_Modules\Distrib_Toonkit_Module\Distributions\Toonkit_Module_2018_1_5_38\Maya2018\Standalones\OSCAR</Value>
     </Setting>
     <Setting Name="LittleFont" Type="System.Drawing.Font" Scope="Application">
       <Value Profile="(Default)">Microsoft Sans Serif, 9pt</Value>
