@@ -2473,6 +2473,9 @@ namespace TK.GeometryLib.AreaMapFramework
 
                 foreach (Area area in areas)
                 {
+                    if (!area.IsVisible && !area.IsActive)
+                        continue;
+
                     List<string> handles = new List<string>();
                     switch(area.Type)
                     {
