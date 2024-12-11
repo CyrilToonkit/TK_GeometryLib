@@ -271,6 +271,11 @@ namespace TK.GeometryLib.AreaMapFramework
             _areaMapComponent.Invalidate();
         }
 
+        internal void RenameFromMapping(Dictionary<string, string> mapping)
+        {
+            _areaMapComponent.RenameFromMapping(mapping);
+        }
+
         public virtual void RefreshSelection()
         {
 

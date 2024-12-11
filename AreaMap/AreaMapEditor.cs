@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using TK.GeometryLib;
 using System.IO;
@@ -254,7 +255,43 @@ namespace TK.GeometryLib.AreaMapFramework
             RefreshMetaData();
         }
 
-        private void loadAsTabToolStripMenuItem_Click(object sender, EventArgs e)
+        public void RenameFromMapping(string inPath)
+        {
+            Dictionary<string, string> mapping = ReadMapping(inPath);
+            areaMapControl1.RenameFromMapping(mapping);
+
+            RefreshListBox();
+            RefreshGroups();
+            RefreshMetaData();
+        }
+
+        private Dictionary<string, string> ReadMapping(string inPath, string inSeparator)
+        {
+            Dictionary<string, string> mapping = new Dictionary<string, string>();
+
+            char[] sep = inSeparator.ToCharArray();
+
+            using (var reader = new StreamReader(inPath))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(sep);
+
+                    if (!mapping.ContainsKey(values[0]))
+                        mapping.Add(values[0], values[1]);
+                }
+            }
+
+            return mapping;
+        }
+
+        private Dictionary<string, string> ReadMapping(string inPath)
+        {
+            return ReadMapping(inPath, ",");
+        }
+
+            private void loadAsTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Xml file (*.xml)|*.xml";
 
@@ -1058,6 +1095,16 @@ namespace TK.GeometryLib.AreaMapFramework
             {
                 AreaMapComponent.Center = new Vector2(AreaMapComponent.Center.X, (float)centerYNUD.Value);
                 AreaMapComponent.Invalidate();
+            }
+        }
+
+        private void renameShapesFromCsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Csv file (*.csv,*.txt)|*.csv;*.txt";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                RenameFromMapping(openFileDialog1.FileName);
             }
         }
     }

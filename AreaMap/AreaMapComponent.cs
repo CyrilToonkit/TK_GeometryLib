@@ -248,6 +248,22 @@ namespace TK.GeometryLib.AreaMapFramework
                     CurrentAreaMap.Center = new Vector2((float)value, CurrentAreaMap.Center.Y);
             }
         }
+
+        internal void RenameFromMapping(Dictionary<string, string> mapping)
+        {
+            foreach(AreaMap map in _maps)
+            {
+                foreach (Area area in map.Areas)
+                {
+                    foreach (KeyValuePair<string,string> kvp in mapping)
+                    {
+                        area.Name = area.Name.Replace(kvp.Key, kvp.Value);
+                        area.MetaData = area.MetaData.Replace(kvp.Key, kvp.Value);
+                    }
+                }
+            }
+        }
+
         int CenterY
         {
             get { return CurrentAreaMap != null ? (int)CurrentAreaMap.Center.Y : 0; }
